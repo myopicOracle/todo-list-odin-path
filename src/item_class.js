@@ -1,5 +1,9 @@
 class Item extends App {
-    constructor() {
+    constructor(name, details, dueDate, priority) {
+        super(name)
+        this.details = details
+        this.dueDate = dueDate
+        this.priority = priority
         this.itemArray = []
     }
 
@@ -24,12 +28,39 @@ class Item extends App {
     }
 
     _appendItem() {
+        const newItem = document.createElement("div")
+
+        this.quadrantOne.textContent = this.nameInput
+        newItem.appendChild(this.quadrantOne)
+        this.quadrantTwo.textContent = this.detailsInput
+        newItem.appendChild(this.quadrantTwo)
+        this.quadrantThree.textContent = this.dueDateInput
+        newItem.appendChild(this.quadrantThree)
+        this.quadrantFour.textContent = this.priorityInput
+        newItem.appendChild(this.quadrantFour)
+
+        this.itemArray.push(newItem)
 
     }
 
     _deleteItem() {
 
     }
+
+
+
+
+    _addToArray(array) {
+
+
+
+        array.push(newObj)
+
+    }
+    
+    
+
+
 
 
 }

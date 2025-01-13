@@ -1,5 +1,7 @@
 class Project extends App {
-    constructor() {
+    constructor(name, dueDate) {
+        super(name)
+        this.dueDate = dueDate
         this.projectArray = []
     }
 
