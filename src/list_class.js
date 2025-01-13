@@ -1,7 +1,6 @@
 class List extends App {
-    constructor(name, priority) {
-        super(name)
-        this.priority = priority
+    constructor(name, details, dueDate, priority) {
+        super(name, details, dueDate, priority)
         this.listArray = []
     }
 

@@ -9,8 +9,11 @@ class App {
     quadrantThree = document.createElement("div")
     quadrantFour = document.createElement("div")
 
-    constructor(name) {
-        this.name
+    constructor(name, details, dueDate, priority) {
+        this.name = name
+        this.details = details
+        this.dueDate = dueDate
+        this.priority = priority
         this.root = []
     }
 
