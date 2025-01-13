@@ -26,7 +26,6 @@ User should be able to:
 15. Data persists, is stored in local storage on creation
 16. Local storage data is retrieved on page load
 
-##
 
 # Architecture / Flow:
 
