@@ -1,20 +1,10 @@
-class List extends App {
+import App from "./app_class.js"
+
+export default class List extends App {
     constructor(name, priority) {
         super(name)
         this.priority = priority
-        this.listArray = []
-    }
-
-    _getListInputs() {
-        const wrapper = document.querySelector(".wrapper")
-
-        super._createForm()
-        
-        const formPriority = document.createElement("input")
-        formPriority.setAttribute("class", "form priority")
-        formContainer.appendChild(formPriority)
-        
-        wrapper.appendChild(formContainer)
+        this.itemArray = []
     }
 
     _appendList() {
@@ -32,6 +22,5 @@ class List extends App {
     _editList() {
 
     }
-
 
 }

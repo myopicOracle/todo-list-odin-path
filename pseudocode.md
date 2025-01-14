@@ -46,6 +46,8 @@ User should be able to:
 6. Button to edit list properties
 
 
+## Module Functions
+
 // Project Class Modules
 _defaultProject()
 _newProject()
@@ -79,3 +81,73 @@ _appendSomething()
 _deleteSomething()
 _editSomething()
 _switchSomething()
+
+
+## Call Sequence
+
+defaultShownOnPageLoad();
+
+
+addItemButton.addEventListener("click", _showForm)
+
+
+submitFormButton.addEventListener("click", submitForm() => {
+    _createObject new Item()
+    _pushObjectToArray
+    _displayArray
+})
+
+
+
+deleteItemButton.addEventListener("click", () => {
+    _deleteFromArray
+})
+
+
+
+addListButton.addEventListener("click", () => {
+    _    
+})
+confirmAddListButton.addEventListener("click", () => {
+    _    
+})
+deleteListButton.addEventListener("click", () => {
+    _    
+})
+
+
+
+addProjectButton.addEventListener("click", () => {
+    _    
+})
+confirmAddProjectButton.addEventListener("click", () => {
+    _    
+})
+deleteProjectButton.addEventListener("click", () => {
+    _    
+})
+
+
+# Finalized Navigation Call Sequence
+
+addItemButton.addEventListener("click", _showForm)
+
+submitFormButton.addEventListener("click", _submitForm)
+
+deleteItemButton.addEventListener("click", _deleteElement)
+
+
+
+addListButton.addEventListener("click", _showForm)
+
+confirmAddListButton.addEventListener("click", _submitForm)
+
+deleteListButton.addEventListener("click", _deleteElement)
+
+
+
+addProjectButton.addEventListener("click", _showForm)
+
+confirmAddProjectButton.addEventListener("click", _submitForm)
+
+deleteProjectButton.addEventListener("click", _deleteElement)

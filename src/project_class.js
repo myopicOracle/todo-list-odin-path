@@ -1,28 +1,10 @@
-class Project extends App {
+import App from "./app_class.js"
+
+export default class Project extends App {
     constructor(name, dueDate) {
         super(name)
         this.dueDate = dueDate
-        this.projectArray = []
-    }
-
-    _getProjectInputs() {
-        const wrapper = document.querySelector(".wrapper")
-
-        super._createForm()
-        
-        const formDueDate = document.createElement("input")
-        formDueDate.setAttribute("class", "form dueDate")
-        formContainer.appendChild(formDueDate)
-        
-        wrapper.appendChild(formContainer)
-    }
-
-    _appendProject() {
-
-    }
-
-    _deleteProject() {
-
+        this.listArray = []
     }
 
     _switchProject() {
@@ -36,6 +18,5 @@ class Project extends App {
     _editProject() {
 
     }
-
 
 }

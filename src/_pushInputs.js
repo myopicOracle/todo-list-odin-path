@@ -1,10 +1,9 @@
 export default function _pushInputsToArray(e) {
 
-    // moved to IIFE DOM Els module
-    // const nameInput = document.querySelector(".name").value
-    // const detailsInput = document.querySelector(".details").value
-    // const dueDateInput = document.querySelector(".dueDate").value
-    // const priorityInput = document.querySelector(".priority").value
+    const nameInput = document.querySelector(".name").value
+    const detailsInput = document.querySelector(".details").value
+    const dueDateInput = document.querySelector(".dueDate").value
+    const priorityInput = document.querySelector(".priority").value
     
     if (e.target.parentElement.classList.contains("project")) {
         const newObj = new Project(nameInput, dueDateInput)
