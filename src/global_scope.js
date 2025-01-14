@@ -2,13 +2,6 @@ const outerContainer = document.querySelector("#outer-container")
 const panelContainer = document.querySelector("#panel-container")
 const contentContainer = document.querySelector("#content-container")
 
-const formContainer = document.createElement("div")
-const formName = document.createElement("input")
-const formDetails = document.createElement("input")
-const formDueDate = document.createElement("input")
-const formPriority = document.createElement("input")
-const formButton = document.createElement("button")
-
 const buttonAddProject = document.createElement("button")
 const buttonAddList = document.createElement("button")
 const buttonAddItem = document.createElement("button")
@@ -19,6 +12,13 @@ const projectTitle = document.createElement("div")
 const projectDetail = document.createElement("div")
 const listTitle = document.createElement("div")
 const listDetail = document.createElement("div")
+
+const formContainer = document.createElement("div")
+const formName = document.createElement("input")
+const formDetails = document.createElement("input")
+const formDueDate = document.createElement("input")
+const formPriority = document.createElement("input")
+const formButton = document.createElement("button")
 
 const inputsContainer = document.createElement("div")
 const quadrantOne = document.createElement("li")
@@ -41,36 +41,40 @@ const projectArray = []
 // quadrantFour.textContent = priorityInput
 
 export default function defaultOnPageLoad() {
+    
+    // Add sample project details and action buttons to Left Panel 
+    projectTitle.setAttribute("class", "inputs projectTitle")
+    projectTitle.textContent = "projectTitle TEXT TEXT"
+    panelContainer.appendChild(projectTitle)
 
+    projectDetail.setAttribute("class", "inputs projectDetail")
+    projectDetail.textContent = "projectDetail TEXT TEXT"
+    panelContainer.appendChild(projectDetail)
+
+    formContainer.setAttribute("class", "form container")
+    panelContainer.appendChild(formContainer)
+
+    addPanelButtons()
+
+    // Create sample list and item
     sampleList.setAttribute("class", "list wrapper sample")
     sampleItem.setAttribute("class", "item wrapper sample")
-
-    projectTitle.setAttribute("class", "inputs projectTitle")
-    projectDetail.setAttribute("class", "inputs projectDetail")
     listTitle.setAttribute("class", "inputs listTitle")
     listDetail.setAttribute("class", "inputs listDetail")
 
-    projectTitle.textContent = "projectTitle TEXT TEXT"
-    projectDetail.textContent = "projectDetail TEXT TEXT"
     listTitle.textContent = "listTitle TEXT TEXT"
     listDetail.textContent = "listDetail TEXT TEXT"
     
-    // Add item text content to item container
     addItemQuadrants()
 
-    // Add list details to display
+    // Add completed list to right-hand content box
     sampleList.appendChild(listTitle)
     sampleList.appendChild(listDetail)
 
-    // Add completed list to right-hand content box
     sampleList.appendChild(sampleItem)
     contentContainer.appendChild(sampleList)
 
-    // Add project details to left-hand panel
-    panelContainer.appendChild(projectTitle)
-    panelContainer.appendChild(projectDetail)
 
-    addPanelButtons()
 }
 
 export const addPanelButtons = function() {
@@ -111,6 +115,12 @@ export const addItemQuadrants = function() {
 export { outerContainer, 
     panelContainer, 
     contentContainer, 
+    sampleList, 
+    sampleItem, 
+    projectTitle, 
+    projectDetail, 
+    listTitle, 
+    listDetail, 
     formContainer,
     formName, 
     formDetails, 

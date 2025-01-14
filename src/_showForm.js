@@ -1,31 +1,39 @@
+import defaultOnPageLoad, { addPanelButtons, addItemQuadrants, outerContainer, panelContainer, contentContainer, sampleList, sampleItem, projectTitle, projectDetail, listTitle, listDetail, containerInstance, formName, formDetails, formDueDate, formPriority, formButton, inputsContainer, buttonAddProject, buttonAddList, buttonAddItem, quadrantOne, quadrantTwo, quadrantThree, quadrantFour, projectArray } from "./global_scope.js";
+import _submitForm from "./_submitForm.js";
+
 export default function _showForm(e) {
 
-    // formContainer.setAttribute("class", "form container")
-    // formName.setAttribute("class", "form name")    
-    // formDetails.setAttribute("class", "form details")    
-    // formDueDate.setAttribute("class", "form dueDate")    
-    // formPriority.setAttribute("class", "form priority")
-    // formButton.setAttribute("class", "form submit")
+    const containerInstance = document.querySelector(".form.container")
+
+    formName.setAttribute("class", "form name")    
+    formName.placeholder = "Please enter a Title."
+    formDetails.setAttribute("class", "form details")    
+    formDetails.placeholder = "Include a Description."
+    formDueDate.setAttribute("class", "form dueDate")    
+    formDueDate.placeholder = "What is the Due Date?"
+    formPriority.setAttribute("class", "form priority")
+    formPriority.placeholder = "Choose the Priority Lvl."
+    formButton.setAttribute("class", "form submit")
     
-    formContainer.appendChild(formName)
+    containerInstance.appendChild(formName)
 
     if (e.target.classList.contains("project")) {
-            formContainer.appendChild(formDueDate)
-            
+            containerInstance.appendChild(formDueDate)
+
     } else if (e.target.classList.contains("list")) {
-            formContainer.appendChild(formPriority)
-                  
+            containerInstance.appendChild(formPriority)
+
     } else if (e.target.classList.contains("item")) {
-            formContainer.appendChild(formDetails)            
-            formContainer.appendChild(formDueDate)
-            formContainer.appendChild(formPriority)
+            containerInstance.appendChild(formDetails)            
+            containerInstance.appendChild(formDueDate)
+            containerInstance.appendChild(formPriority)
             
     } else alert("ERROR")
 
-    formContainer.appendChild(formButton)
-    panelContainer.appendChild(formContainer)
+    containerInstance.appendChild(formButton)
 
     const submitButton = document.querySelector(".form.submit")
+    submitButton.textContent = "Create"
     submitButton.addEventListener("click", _submitForm)
 
 }
