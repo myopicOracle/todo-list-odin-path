@@ -1,57 +1,62 @@
-export default function globalScopeIIFE() {
+const outerContainer = document.querySelector("#outer-container")
+const panelContainer = document.querySelector("#panel-container")
+const contentContainer = document.querySelector("#content-container")
 
-    const sampleList = document.createElement("ul")
-    const sampleItem = document.createElement("ul")
+const formContainer = document.createElement("div")
+const formName = document.createElement("input")
+const formDetails = document.createElement("input")
+const formDueDate = document.createElement("input")
+const formPriority = document.createElement("input")
+const formButton = document.createElement("button")
 
-        sampleList.setAttribute("class", "list wrapper sample")
-        sampleItem.setAttribute("class", "item wrapper sample")
+const buttonAddProject = document.createElement("button")
+const buttonAddList = document.createElement("button")
+const buttonAddItem = document.createElement("button")
 
-    const projectTitle = document.createElement("div")
-    const projectDetail = document.createElement("div")
-    const listTitle = document.createElement("div")
-    const listDetail = document.createElement("div")
+const sampleList = document.createElement("ul")
+const sampleItem = document.createElement("ul")
+const projectTitle = document.createElement("div")
+const projectDetail = document.createElement("div")
+const listTitle = document.createElement("div")
+const listDetail = document.createElement("div")
 
-        projectTitle.setAttribute("class", "inputs projectTitle")
-        projectDetail.setAttribute("class", "inputs projectDetail")
-        listTitle.setAttribute("class", "inputs listTitle")
-        listDetail.setAttribute("class", "inputs listDetail")
+const inputsContainer = document.createElement("div")
+const quadrantOne = document.createElement("li")
+const quadrantTwo = document.createElement("li")
+const quadrantThree = document.createElement("li")
+const quadrantFour = document.createElement("li")
 
-        projectTitle.textContent = "projectTitle TEXT TEXT"
-        projectDetail.textContent = "projectDetail TEXT TEXT"
-        listTitle.textContent = "listTitle TEXT TEXT"
-        listDetail.textContent = "listDetail TEXT TEXT"
+const projectArray = []
+
+// IN _pushInputs
+// const nameInput = document.querySelector(".name").value
+// const detailsInput = document.querySelector(".details").value
+// const dueDateInput = document.querySelector(".dueDate").value
+// const priorityInput = document.querySelector(".priority").value
+
+// IN _appendInputs
+// quadrantOne.textContent = nameInput
+// quadrantTwo.textContent = detailsInput
+// quadrantThree.textContent = dueDateInput
+// quadrantFour.textContent = priorityInput
+
+export default function defaultOnPageLoad() {
+
+    sampleList.setAttribute("class", "list wrapper sample")
+    sampleItem.setAttribute("class", "item wrapper sample")
+
+    projectTitle.setAttribute("class", "inputs projectTitle")
+    projectDetail.setAttribute("class", "inputs projectDetail")
+    listTitle.setAttribute("class", "inputs listTitle")
+    listDetail.setAttribute("class", "inputs listDetail")
+
+    projectTitle.textContent = "projectTitle TEXT TEXT"
+    projectDetail.textContent = "projectDetail TEXT TEXT"
+    listTitle.textContent = "listTitle TEXT TEXT"
+    listDetail.textContent = "listDetail TEXT TEXT"
     
-    const quadrantOne = document.createElement("li")
-    const quadrantTwo = document.createElement("li")
-    const quadrantThree = document.createElement("li")
-    const quadrantFour = document.createElement("li")
-
-        quadrantOne.setAttribute("class", "inputs quadrantOne")
-        quadrantTwo.setAttribute("class", "inputs quadrantTwo")
-        quadrantThree.setAttribute("class", "inputs quadrantThree")
-        quadrantFour.setAttribute("class", "inputs quadrantFour")
-
-        quadrantOne.textContent = "QuadrantOne Text"
-        quadrantTwo.textContent = "QuadrantTwo Text"
-        quadrantThree.textContent = "QuadrantThree Text"
-        quadrantFour.textContent = "QuadrantFour Text"
-
-        sampleItem.appendChild(quadrantOne)
-        sampleItem.appendChild(quadrantTwo)
-        sampleItem.appendChild(quadrantThree)
-        sampleItem.appendChild(quadrantFour)
-
-    const button1 = document.createElement("button")
-    const button2 = document.createElement("button")
-    const button3 = document.createElement("button")
-
-        button1.setAttribute("class", "button1 Project button add")
-        button2.setAttribute("class", "button2 List button add")
-        button3.setAttribute("class", "button3 Item button add")
-
-        button1.textContent = "Add Project"
-        button2.textContent = "Add List"
-        button3.textContent = "Add Item"
+    // Add item text content to item container
+    addItemQuadrants()
 
     // Add list details to display
     sampleList.appendChild(listTitle)
@@ -65,66 +70,59 @@ export default function globalScopeIIFE() {
     panelContainer.appendChild(projectTitle)
     panelContainer.appendChild(projectDetail)
 
-    // Add action buttons to left-hand panel
-    panelContainer.appendChild(button1)
-    panelContainer.appendChild(button2)
-    panelContainer.appendChild(button3)
+    addPanelButtons()
+}
+
+export const addPanelButtons = function() {
+
+    buttonAddProject.setAttribute("class", "buttonAddProject project button add")
+    buttonAddList.setAttribute("class", "buttonAddList list button add")
+    buttonAddItem.setAttribute("class", "buttonAddItem item button add")
+
+    buttonAddProject.textContent = "Add Project"
+    buttonAddList.textContent = "Add List"
+    buttonAddItem.textContent = "Add Item"
+
+    panelContainer.appendChild(buttonAddProject)
+    panelContainer.appendChild(buttonAddList)
+    panelContainer.appendChild(buttonAddItem)
 
 }
 
-const outerContainer = document.querySelector("#outer-container")
-const panelContainer = document.querySelector("#panel-container")
-const contentContainer = document.querySelector("#content-container")
+export const addItemQuadrants = function() {
 
-const inputsContainer = document.createElement("div")
+    quadrantOne.setAttribute("class", "inputs quadrantOne")
+    quadrantTwo.setAttribute("class", "inputs quadrantTwo")
+    quadrantThree.setAttribute("class", "inputs quadrantThree")
+    quadrantFour.setAttribute("class", "inputs quadrantFour")
 
-const formContainer = document.createElement("div")
-const formName = document.createElement("input")
-const formDetails = document.createElement("input")
-const formDueDate = document.createElement("input")
-const formPriority = document.createElement("input")
-const submitButton = document.createElement("button")
+    quadrantOne.textContent = "QuadrantOne Text"
+    quadrantTwo.textContent = "QuadrantTwo Text"
+    quadrantThree.textContent = "QuadrantThree Text"
+    quadrantFour.textContent = "QuadrantFour Text"
 
-formContainer.setAttribute("class", "form container")
-formName.setAttribute("class", "form name")    
-formDetails.setAttribute("class", "form details")    
-formDueDate.setAttribute("class", "form dueDate")    
-formPriority.setAttribute("class", "form priority")
-submitButton.setAttribute("class", "form submit button")
+    sampleItem.appendChild(quadrantOne)
+    sampleItem.appendChild(quadrantTwo)
+    sampleItem.appendChild(quadrantThree)
+    sampleItem.appendChild(quadrantFour)
 
-// IN _pushInputs
-// const nameInput = document.querySelector(".name").value
-// const detailsInput = document.querySelector(".details").value
-// const dueDateInput = document.querySelector(".dueDate").value
-// const priorityInput = document.querySelector(".priority").value
-
-const quadrantOne = document.createElement("div")
-const quadrantTwo = document.createElement("div")
-const quadrantThree = document.createElement("div")
-const quadrantFour = document.createElement("div")
-
-// IN _appendInputs
-// quadrantOne.textContent = nameInput
-// quadrantTwo.textContent = detailsInput
-// quadrantThree.textContent = dueDateInput
-// quadrantFour.textContent = priorityInput
-
-const submitFormButton = document.querySelector(".form.submit")
-const projectArray = []
+}
 
 export { outerContainer, 
     panelContainer, 
     contentContainer, 
-    inputsContainer, 
     formContainer,
-    formName,
-    formDetails,
-    formDueDate,
-    formPriority,
-    submitButton,
+    formName, 
+    formDetails, 
+    formDueDate, 
+    formPriority, 
+    formButton, 
+    inputsContainer, 
+    buttonAddProject,
+    buttonAddList,
+    buttonAddItem,
     quadrantOne, 
     quadrantTwo, 
     quadrantThree, 
     quadrantFour, 
-    submitFormButton, 
-    projectArray };
+    projectArray };  

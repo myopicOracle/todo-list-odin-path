@@ -50,11 +50,12 @@
     background-color: magenta;
     font-family: monospace;
     font-size: 24px;
-    /* width: 80px;
-    height: 30px; */
+    width: 60%;
+    height: 40px;
     margin: 0 auto;
     /* padding: 50% 0; */
     border: 4px solid purple;
+    border-radius: 15px;
 }
 
 .projectTitle {
