@@ -1,4 +1,4 @@
-const _appendInputsToDisplay = function(e) {
+export default function _appendInputsToDisplay(e) {
 
     // moved to IIFE DOM Els module
     // const quadrantOne = document.createElement("div")
