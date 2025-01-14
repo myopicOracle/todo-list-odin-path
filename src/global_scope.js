@@ -1,62 +1,74 @@
 export default function globalScopeIIFE() {
 
-    console.log('"Testing that globalScopeIIFE called on page load."')
-
-    const sampleProject = document.createElement("div") 
     const sampleList = document.createElement("ul")
-    const sampleItem = document.createElement("li")
+    const sampleItem = document.createElement("ul")
 
-    sampleProject.setAttribute("class", "project wrapper sample")
-    sampleList.setAttribute("class", "list wrapper sample")
-    sampleItem.setAttribute("class", "item wrapper sample")
+        sampleList.setAttribute("class", "list wrapper sample")
+        sampleItem.setAttribute("class", "item wrapper sample")
 
     const projectTitle = document.createElement("div")
-    projectTitle.textContent = "projectTitle TEXT TEXT"
-    projectTitle.setAttribute("class", "inputs projectTitle sampleProject")
-    sampleProject.appendChild(projectTitle)
-    
     const projectDetail = document.createElement("div")
-    projectDetail.textContent = "projectDetail TEXT TEXT"
-    projectDetail.setAttribute("class", "inputs projectDetail sampleProject")
-    sampleProject.appendChild(projectDetail)
-    
     const listTitle = document.createElement("div")
-    listTitle.textContent = "listTitle TEXT TEXT"
-    listTitle.setAttribute("class", "inputs listTitle sampleList")
-    sampleList.appendChild(listTitle)
-    
     const listDetail = document.createElement("div")
-    listDetail.textContent = "listDetail TEXT TEXT"
-    listDetail.setAttribute("class", "inputs listDetail sampleList")
-    sampleList.appendChild(listDetail)
+
+        projectTitle.setAttribute("class", "inputs projectTitle")
+        projectDetail.setAttribute("class", "inputs projectDetail")
+        listTitle.setAttribute("class", "inputs listTitle")
+        listDetail.setAttribute("class", "inputs listDetail")
+
+        projectTitle.textContent = "projectTitle TEXT TEXT"
+        projectDetail.textContent = "projectDetail TEXT TEXT"
+        listTitle.textContent = "listTitle TEXT TEXT"
+        listDetail.textContent = "listDetail TEXT TEXT"
     
-    const quadrantOne = document.createElement("div")
-    quadrantOne.textContent = "QuadrantOne Text"
-    quadrantOne.setAttribute("class", "inputs quadrantOne sampleItem")
-    sampleItem.appendChild(quadrantOne)
+    const quadrantOne = document.createElement("li")
+    const quadrantTwo = document.createElement("li")
+    const quadrantThree = document.createElement("li")
+    const quadrantFour = document.createElement("li")
 
-    const quadrantTwo = document.createElement("div")
-    quadrantTwo.textContent = "QuadrantTwo Text"
-    quadrantTwo.setAttribute("class", "inputs quadrantTwo sampleItem")
-    sampleItem.appendChild(quadrantTwo)
+        quadrantOne.setAttribute("class", "inputs quadrantOne")
+        quadrantTwo.setAttribute("class", "inputs quadrantTwo")
+        quadrantThree.setAttribute("class", "inputs quadrantThree")
+        quadrantFour.setAttribute("class", "inputs quadrantFour")
 
-    const quadrantThree = document.createElement("div")
-    quadrantThree.textContent = "QuadrantThree Text"
-    quadrantThree.setAttribute("class", "inputs quadrantThree sampleItem")
-    sampleItem.appendChild(quadrantThree)
+        quadrantOne.textContent = "QuadrantOne Text"
+        quadrantTwo.textContent = "QuadrantTwo Text"
+        quadrantThree.textContent = "QuadrantThree Text"
+        quadrantFour.textContent = "QuadrantFour Text"
 
-    const quadrantFour = document.createElement("div")
-    quadrantFour.textContent = "QuadrantFour Text"
-    quadrantFour.setAttribute("class", "inputs quadrantFour sampleItem")
-    sampleItem.appendChild(quadrantFour)
-
-    sampleList.appendChild(sampleItem)
-    sampleProject.appendChild(sampleList)
-    contentContainer.appendChild(sampleProject)
+        sampleItem.appendChild(quadrantOne)
+        sampleItem.appendChild(quadrantTwo)
+        sampleItem.appendChild(quadrantThree)
+        sampleItem.appendChild(quadrantFour)
 
     const button1 = document.createElement("button")
     const button2 = document.createElement("button")
     const button3 = document.createElement("button")
+
+        button1.setAttribute("class", "button1 Project button add")
+        button2.setAttribute("class", "button2 List button add")
+        button3.setAttribute("class", "button3 Item button add")
+
+        button1.textContent = "Add Project"
+        button2.textContent = "Add List"
+        button3.textContent = "Add Item"
+
+    // Add list details to display
+    sampleList.appendChild(listTitle)
+    sampleList.appendChild(listDetail)
+
+    // Add completed list to right-hand content box
+    sampleList.appendChild(sampleItem)
+    contentContainer.appendChild(sampleList)
+
+    // Add project details to left-hand panel
+    panelContainer.appendChild(projectTitle)
+    panelContainer.appendChild(projectDetail)
+
+    // Add action buttons to left-hand panel
+    panelContainer.appendChild(button1)
+    panelContainer.appendChild(button2)
+    panelContainer.appendChild(button3)
 
 }
 

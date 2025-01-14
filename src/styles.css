@@ -1,0 +1,158 @@
+#outer-container {
+    display: flex;
+}
+
+#panel-container {
+    flex: 2;
+    width: 2fr;
+    height: 70vh;
+    /*  */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: repeat(10, 1fr); */
+}
+
+#content-container {
+    flex: 6;
+    width: 6fr;
+    height: 100vh;
+    /*  */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+    grid-template-rows: 1fr;
+}
+
+
+.list {
+    width: 80%;
+    height: 80%;
+    background-color: gold;
+    border: 4px solid violet;
+    border-radius: 10px;
+}
+
+.item {
+    width: 80%;
+    height: 80%;
+    background-color: wheat;
+    border: 4px solid blue;
+    border-radius: 10px;
+}
+
+.button {
+    /* grid-area: 3 / 1 / 6 / 2; */
+    /*  */
+    color: white;
+    background-color: magenta;
+    font-family: monospace;
+    font-size: 24px;
+    /* width: 80px;
+    height: 30px; */
+    margin: 0 auto;
+    /* padding: 50% 0; */
+    border: 4px solid purple;
+}
+
+.projectTitle {
+    color: darkgrey;
+    font-family: monospace;
+    font-size: 16px;
+    /* width: 150px;
+    height: 20px; */
+    margin: 0 auto;
+    /* padding: 50% 0; */
+    border: 2px solid orange;
+}
+
+.projectDetail {
+    color: darkgrey;
+    font-family: monospace;
+    font-size: 16px;
+    /* width: 50px;
+    height: 20px; */
+    margin: 0 auto;
+    /* padding: 50% 0; */
+    border: 2px solid orange;
+}
+
+.listTitle {
+    color: darkgrey;
+    font-family: monospace;
+    font-size: 16px;
+    /* width: 50px;
+    height: 20px; */
+    margin: 0 auto;
+    /* padding: 50% 0; */
+    border: 2px solid blue;
+}
+
+.listDetail {
+    color: darkgrey;
+    font-family: monospace;
+    font-size: 16px;
+    /* width: 50px;
+    height: 20px; */
+    margin: 0 auto;
+    /* padding: 50% 0; */
+    border: 2px solid blue;
+}
+
+.quadrantOne {
+    color: darkgrey;
+    font-family: monospace;
+    font-size: 16px;
+    /* width: 50px;
+    height: 20px; */
+    /* margin: 0 auto; */
+    /* padding: 50% 0; */
+    border: 1px solid magenta;
+}
+
+.quadrantTwo {
+    color: darkgrey;
+    font-family: monospace;
+    font-size: 16px;
+    /* width: 50px;
+    height: 20px; */
+    /* margin: 0 auto; */
+    /* padding: 50% 0; */
+    border: 1px solid magenta;
+}
+
+.quadrantThree {
+    color: darkgrey;
+    font-family: monospace;
+    font-size: 16px;
+    /* width: 50px;
+    height: 20px; */
+    /* margin: 0 auto; */
+    /* padding: 50% 0; */
+    border: 1px solid magenta;
+}
+
+.quadrantFour {
+    color: darkgrey;
+    font-family: monospace;
+    font-size: 16px;
+    /* width: 50px;
+    height: 20px; */
+    /* margin: 0 auto; */
+    /* padding: 50% 0; */
+    border: 1px solid magenta;
+}
+
+
+
+
+
+
+
+
+
+
+
+
