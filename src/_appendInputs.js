@@ -28,7 +28,6 @@ export default function _appendInputsToDisplay(e) {
     deleteItemButton.textContent = "X"
     deleteItemButton.addEventListener('click', _deleteElement)
 
-
     const nameInput = document.querySelector(".name").value
     quadrantOne.textContent = nameInput
 
@@ -36,16 +35,16 @@ export default function _appendInputsToDisplay(e) {
         projectCounter += 1
         let identifier = `project-${projectCounter}`
         inputsContainer.setAttribute("class", `project ${identifier}`)
+        
+        inputsContainer.appendChild(deleteProjectButton)
 
         const dueDateInput = document.querySelector(".dueDate").value
         quadrantThree.textContent = dueDateInput
-
+        
         quadrantOne.setAttribute("class", "quadrantOne projectTitle")
         quadrantThree.setAttribute("class", "quadrantThree projectDueDate")
         inputsContainer.appendChild(quadrantOne)
         inputsContainer.appendChild(quadrantThree)
-
-        inputsContainer.appendChild(deleteProjectButton)
         
         contentContainer.appendChild(inputsContainer)
     }
@@ -54,6 +53,8 @@ export default function _appendInputsToDisplay(e) {
         listCounter += 1
         let identifier = `list-${listCounter}`
         inputsContainer.setAttribute("class", `list ${identifier}`)
+        
+        inputsContainer.appendChild(deleteListButton)
 
         const priorityInput = document.querySelector(".priority").value
         quadrantFour.textContent = priorityInput
@@ -63,8 +64,6 @@ export default function _appendInputsToDisplay(e) {
         inputsContainer.appendChild(quadrantOne)
         inputsContainer.appendChild(quadrantFour)
 
-        inputsContainer.appendChild(deleteListButton)
-
         let parentContainer = document.querySelector(`.project-${projectCounter}`)
         parentContainer.appendChild(inputsContainer)
     }
@@ -72,7 +71,7 @@ export default function _appendInputsToDisplay(e) {
     if (e.target.classList.contains("item")) {
         itemCounter += 1
         let identifier = `item-${itemCounter}`
-        inputsContainer.setAttribute("class", `item ${identifier}`)
+        inputsContainer.setAttribute("class", `item wrapper ${identifier}`)
 
         const detailsInput = document.querySelector(".details").value
         quadrantTwo.textContent = detailsInput
@@ -92,8 +91,10 @@ export default function _appendInputsToDisplay(e) {
 
         inputsContainer.appendChild(deleteItemButton)
 
-        let parentContainer = document.querySelector(`.list-${listCounter}`)
-        parentContainer.appendChild(inputsContainer)
+        if (document.querySelector(`.list-${listCounter}`)) {
+            let parentContainer = document.querySelector(`.list-${listCounter}`)
+            parentContainer.appendChild(inputsContainer)
+        }   else alert("You must create a list first!")
     }
 
 console.log("END OF _appendInputsToDisplay()")

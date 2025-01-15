@@ -31,8 +31,29 @@ export default function defaultOnPageLoad() {
     const quadrantTwo = document.createElement("div")
     const quadrantThree = document.createElement("div")
     const quadrantFour = document.createElement("div")
+
+    const deleteProjectButton = document.createElement("button")
+    deleteProjectButton.setAttribute('class', 'project button delete')
+    deleteProjectButton.textContent = "Delete Project"
+    deleteProjectButton.addEventListener('click', (e) => {
+        document.querySelector('.project-container').remove()
+    })
+
+    const deleteListButton = document.createElement("button")
+    deleteListButton.setAttribute('class', 'list button delete')
+    deleteListButton.textContent = "Delete List"
+    deleteListButton.addEventListener('click', (e) => {
+        e.target.parentElement.remove()
+    })
+
+    const deleteItemButton = document.createElement("button")
+    deleteItemButton.addEventListener('click', (e) => {
+        e.target.parentElement.remove()
+    })
     
     // Add sample project details and action buttons to Left Panel 
+    panelContainer.appendChild(deleteProjectButton)
+
     projectTitle.setAttribute("class", "inputs projectTitle")
     projectTitle.textContent = "projectTitle"
     panelContainer.appendChild(projectTitle)
@@ -55,27 +76,35 @@ export default function defaultOnPageLoad() {
     listTitle.textContent = "listTitle"
     listDetail.textContent = "listDetail"
     
+    quadrantOne.setAttribute('class', 'quadrantOne quadrant')
+    quadrantTwo.setAttribute('class', 'quadrantTwo quadrant')
+    quadrantThree.setAttribute('class', 'quadrantThree quadrant')
+    quadrantFour.setAttribute('class', 'quadrantFour quadrant')
+    deleteItemButton.setAttribute('class', 'item button delete')
+
     quadrantOne.textContent = "One"
     quadrantTwo.textContent = "Two"
     quadrantThree.textContent = "Three"
     quadrantFour.textContent = "Four"
+    deleteItemButton.textContent = "X"
 
     sampleItem.appendChild(quadrantOne)
     sampleItem.appendChild(quadrantTwo)
     sampleItem.appendChild(quadrantThree)
     sampleItem.appendChild(quadrantFour)
+    sampleItem.appendChild(deleteItemButton)
     
     // Add completed list to right-hand content box
     const projectContainer = document.createElement("div")
     projectContainer.setAttribute("class", "project-container project-1")
     contentContainer.appendChild(projectContainer)
 
+    sampleList.appendChild(deleteListButton)
     sampleList.appendChild(listTitle)
     sampleList.appendChild(listDetail)
-
     sampleList.appendChild(sampleItem)
-    projectContainer.appendChild(sampleList)
 
+    projectContainer.appendChild(sampleList)
 }
 
 export const addPanelButtons = function() {
