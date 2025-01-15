@@ -24,13 +24,13 @@ const projectArray = []
 export default function defaultOnPageLoad() {
 
     // if in global scope, causes els to be overwritten
-    const sampleList = document.createElement("ul")
-    const sampleItem = document.createElement("ul")
+    const sampleList = document.createElement("div")
+    const sampleItem = document.createElement("div")
 
-    const quadrantOne = document.createElement("li")
-    const quadrantTwo = document.createElement("li")
-    const quadrantThree = document.createElement("li")
-    const quadrantFour = document.createElement("li")
+    const quadrantOne = document.createElement("div")
+    const quadrantTwo = document.createElement("div")
+    const quadrantThree = document.createElement("div")
+    const quadrantFour = document.createElement("div")
     
     // Add sample project details and action buttons to Left Panel 
     projectTitle.setAttribute("class", "inputs projectTitle")
@@ -55,10 +55,10 @@ export default function defaultOnPageLoad() {
     listTitle.textContent = "listTitle"
     listDetail.textContent = "listDetail"
     
-    quadrantOne.textContent = "QuadrantOne Text"
-    quadrantTwo.textContent = "QuadrantTwo Text"
-    quadrantThree.textContent = "QuadrantThree Text"
-    quadrantFour.textContent = "QuadrantFour Text"
+    quadrantOne.textContent = "One"
+    quadrantTwo.textContent = "Two"
+    quadrantThree.textContent = "Three"
+    quadrantFour.textContent = "Four"
 
     sampleItem.appendChild(quadrantOne)
     sampleItem.appendChild(quadrantTwo)

@@ -1,3 +1,4 @@
+import _deleteElement from "./_delete.js";
 import defaultOnPageLoad, { outerContainer, panelContainer, contentContainer, projectTitle, projectDetail, listTitle, listDetail, formContainer, formName, formDetails, formDueDate, formPriority, formButton, buttonAddProject, buttonAddList, buttonAddItem, projectArray } from "./global_scope.js";
 
 let projectCounter = 1;
@@ -6,11 +7,27 @@ let itemCounter = 0;
 
 export default function _appendInputsToDisplay(e) {
 
-    const inputsContainer = document.createElement("ul")
-    const quadrantOne = document.createElement("li")
-    const quadrantTwo = document.createElement("li")
-    const quadrantThree = document.createElement("li")
-    const quadrantFour = document.createElement("li")
+    const inputsContainer = document.createElement("div")
+    const quadrantOne = document.createElement("div")
+    const quadrantTwo = document.createElement("div")
+    const quadrantThree = document.createElement("div")
+    const quadrantFour = document.createElement("div")
+
+    const deleteProjectButton = document.createElement("button")
+    deleteProjectButton.setAttribute('class', 'project button delete')
+    deleteProjectButton.textContent = "Delete Project"
+    deleteProjectButton.addEventListener('click', _deleteElement)
+
+    const deleteListButton = document.createElement("button")
+    deleteListButton.setAttribute('class', 'list button delete')
+    deleteListButton.textContent = "Delete List"
+    deleteListButton.addEventListener('click', _deleteElement)
+
+    const deleteItemButton = document.createElement("button")
+    deleteItemButton.setAttribute('class', 'item button delete')
+    deleteItemButton.textContent = "X"
+    deleteItemButton.addEventListener('click', _deleteElement)
+
 
     const nameInput = document.querySelector(".name").value
     quadrantOne.textContent = nameInput
@@ -27,6 +44,8 @@ export default function _appendInputsToDisplay(e) {
         quadrantThree.setAttribute("class", "quadrantThree projectDueDate")
         inputsContainer.appendChild(quadrantOne)
         inputsContainer.appendChild(quadrantThree)
+
+        inputsContainer.appendChild(deleteProjectButton)
         
         contentContainer.appendChild(inputsContainer)
     }
@@ -44,11 +63,9 @@ export default function _appendInputsToDisplay(e) {
         inputsContainer.appendChild(quadrantOne)
         inputsContainer.appendChild(quadrantFour)
 
-        let parentContainer = document.querySelector(`.project-${projectCounter}`)
-            console.log(projectCounter)
-            console.log(parentContainer)
-            console.log(`List Counter: ${listCounter}`)
+        inputsContainer.appendChild(deleteListButton)
 
+        let parentContainer = document.querySelector(`.project-${projectCounter}`)
         parentContainer.appendChild(inputsContainer)
     }
     
@@ -73,12 +90,9 @@ export default function _appendInputsToDisplay(e) {
         inputsContainer.appendChild(quadrantThree)
         inputsContainer.appendChild(quadrantFour)
 
-        console.log(listCounter)
+        inputsContainer.appendChild(deleteItemButton)
 
         let parentContainer = document.querySelector(`.list-${listCounter}`)
-            console.log(listCounter)
-            console.log(parentContainer)
-
         parentContainer.appendChild(inputsContainer)
     }
 

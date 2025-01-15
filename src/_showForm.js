@@ -8,38 +8,43 @@ export default function _showForm(e) {
     const containerInstance = document.querySelector(".form.container")
 
     formName.setAttribute("class", "form name")    
-    formName.placeholder = "Please enter a Title."
     formName.value = ''
     
-    formDetails.setAttribute("class", "form details")    
-    formDetails.placeholder = "Include a Description."
+    formDetails.setAttribute("class", "form details")
+    formDetails.placeholder = "Include a Description."    
     formDetails.value = ''
     
-    formDueDate.setAttribute("class", "form dueDate")    
-    formDueDate.placeholder = "What is the Due Date?"
+    formDueDate.setAttribute("class", "form dueDate")
+    formDueDate.placeholder = "What is the Due Date?"    
     formDueDate.value = ''
     
     formPriority.setAttribute("class", "form priority")
     formPriority.placeholder = "Choose the Priority Lvl."
     formPriority.value = ''
-    
-    formButton.setAttribute("class", "form submit")
-    
-    containerInstance.appendChild(formName)
+        
     
     if (e.target.classList.contains("project")) {
-        containerInstance.appendChild(formDueDate)
+        formName.placeholder = "PROJECT NAME"
         formButton.setAttribute("class", "project form submit")
+    
+        containerInstance.appendChild(formName)
+        containerInstance.appendChild(formDueDate)
         
     } else if (e.target.classList.contains("list")) {
-        containerInstance.appendChild(formPriority)
+        formName.placeholder = "LIST TITLE"
         formButton.setAttribute("class", "list form submit")
+    
+        containerInstance.appendChild(formName)
+        containerInstance.appendChild(formPriority)
         
     } else if (e.target.classList.contains("item")) {
+        formName.placeholder = "TO-DO TASK NAME"
+        formButton.setAttribute("class", "item form submit")
+
+        containerInstance.appendChild(formName)
         containerInstance.appendChild(formDetails)            
         containerInstance.appendChild(formDueDate)
         containerInstance.appendChild(formPriority)
-        formButton.setAttribute("class", "item form submit")
         
     } else alert("ERROR")
     
