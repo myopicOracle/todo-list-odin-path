@@ -1,20 +1,22 @@
-import defaultOnPageLoad, { addPanelButtons, addItemQuadrants, outerContainer, panelContainer, contentContainer, sampleList, sampleItem, projectTitle, projectDetail, listTitle, listDetail, formContainer, formName, formDetails, formDueDate, formPriority, formButton, inputsContainer, buttonAddProject, buttonAddList, buttonAddItem, quadrantOne, quadrantTwo, quadrantThree, quadrantFour, projectArray, projectCounter, listCounter, itemCounter } from "./global_scope.js";
+import defaultOnPageLoad, { outerContainer, panelContainer, contentContainer, projectTitle, projectDetail, listTitle, listDetail, formContainer, formName, formDetails, formDueDate, formPriority, formButton, buttonAddProject, buttonAddList, buttonAddItem, projectArray } from "./global_scope.js";
+
+let projectCounter = 1;
+let listCounter = 0;
+let itemCounter = 0;
 
 export default function _appendInputsToDisplay(e) {
 
-    // MOVED to global_scope.js
-    // const inputsContainer = document.createElement("div")
-
-    // const quadrantOne = document.createElement("div")
-    // const quadrantTwo = document.createElement("div")
-    // const quadrantThree = document.createElement("div")
-    // const quadrantFour = document.createElement("div")
+    const inputsContainer = document.createElement("ul")
+    const quadrantOne = document.createElement("li")
+    const quadrantTwo = document.createElement("li")
+    const quadrantThree = document.createElement("li")
+    const quadrantFour = document.createElement("li")
 
     const nameInput = document.querySelector(".name").value
     quadrantOne.textContent = nameInput
 
     if (e.target.classList.contains("project")) {
-        ++projectCounter
+        projectCounter += 1
         let identifier = `project-${projectCounter}`
         inputsContainer.setAttribute("class", `${identifier}`)
 
@@ -30,7 +32,7 @@ export default function _appendInputsToDisplay(e) {
     }
     
     if (e.target.classList.contains("list")) {
-        ++listCounter
+        listCounter += 1
         let identifier = `list-${listCounter}`
         inputsContainer.setAttribute("class", `${identifier}`)
 
@@ -42,15 +44,16 @@ export default function _appendInputsToDisplay(e) {
         inputsContainer.appendChild(quadrantOne)
         inputsContainer.appendChild(quadrantFour)
 
-        const parentContainer = document.querySelector(`.project-${projectCounter}`)
+        let parentContainer = document.querySelector(`.project-${projectCounter}`)
             console.log(projectCounter)
             console.log(parentContainer)
+            console.log(`List Counter: ${listCounter}`)
 
         parentContainer.appendChild(inputsContainer)
     }
     
     if (e.target.classList.contains("item")) {
-        ++itemCounter
+        itemCounter += 1
         let identifier = `item-${itemCounter}`
         inputsContainer.setAttribute("class", `${identifier}`)
 
@@ -70,13 +73,13 @@ export default function _appendInputsToDisplay(e) {
         inputsContainer.appendChild(quadrantThree)
         inputsContainer.appendChild(quadrantFour)
 
-        const parentContainer = document.querySelector(`.list-${listCounter}`)
+        console.log(listCounter)
+
+        let parentContainer = document.querySelector(`.list-${listCounter}`)
             console.log(listCounter)
             console.log(parentContainer)
 
         parentContainer.appendChild(inputsContainer)
-
-    //     e.target.parentElement.appendChild(inputsContainer)
     }
 
 console.log("END OF _appendInputsToDisplay()")

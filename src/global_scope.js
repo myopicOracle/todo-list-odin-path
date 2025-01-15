@@ -6,8 +6,6 @@ const buttonAddProject = document.createElement("button")
 const buttonAddList = document.createElement("button")
 const buttonAddItem = document.createElement("button")
 
-const sampleList = document.createElement("ul")
-const sampleItem = document.createElement("ul")
 const projectTitle = document.createElement("div")
 const projectDetail = document.createElement("div")
 const listTitle = document.createElement("div")
@@ -20,33 +18,20 @@ const formDueDate = document.createElement("input")
 const formPriority = document.createElement("input")
 const formButton = document.createElement("button")
 
-const inputsContainer = document.createElement("div")
-const quadrantOne = document.createElement("li")
-const quadrantTwo = document.createElement("li")
-const quadrantThree = document.createElement("li")
-const quadrantFour = document.createElement("li")
-
 const projectArray = []
 
-let projectCounter = 0
-let listCounter = 0
-let itemCounter = 0
-
-// IN _pushInputs
-// const nameInput = document.querySelector(".name").value
-// const detailsInput = document.querySelector(".details").value
-// const dueDateInput = document.querySelector(".dueDate").value
-// const priorityInput = document.querySelector(".priority").value
-
-// IN _appendInputs
-// quadrantOne.textContent = nameInput
-// quadrantTwo.textContent = detailsInput
-// quadrantThree.textContent = dueDateInput
-// quadrantFour.textContent = priorityInput
-
+// exports below
 export default function defaultOnPageLoad() {
 
-    ``
+    // if in global scope, causes els to be overwritten
+    const sampleList = document.createElement("ul")
+    const sampleItem = document.createElement("ul")
+
+    const quadrantOne = document.createElement("li")
+    const quadrantTwo = document.createElement("li")
+    const quadrantThree = document.createElement("li")
+    const quadrantFour = document.createElement("li")
+    
     // Add sample project details and action buttons to Left Panel 
     projectTitle.setAttribute("class", "inputs projectTitle")
     projectTitle.textContent = "projectTitle TEXT TEXT"
@@ -70,11 +55,19 @@ export default function defaultOnPageLoad() {
     listTitle.textContent = "listTitle TEXT TEXT"
     listDetail.textContent = "listDetail TEXT TEXT"
     
-    addItemQuadrants()
+    quadrantOne.textContent = "QuadrantOne Text"
+    quadrantTwo.textContent = "QuadrantTwo Text"
+    quadrantThree.textContent = "QuadrantThree Text"
+    quadrantFour.textContent = "QuadrantFour Text"
+
+    sampleItem.appendChild(quadrantOne)
+    sampleItem.appendChild(quadrantTwo)
+    sampleItem.appendChild(quadrantThree)
+    sampleItem.appendChild(quadrantFour)
     
     // Add completed list to right-hand content box
     const projectContainer = document.createElement("div")
-    projectContainer.setAttribute("class", "project-container")
+    projectContainer.setAttribute("class", "project-container project-1")
     contentContainer.appendChild(projectContainer)
 
     sampleList.appendChild(listTitle)
@@ -101,30 +94,9 @@ export const addPanelButtons = function() {
 
 }
 
-export const addItemQuadrants = function() {
-
-    // quadrantOne.setAttribute("class", "inputs quadrantOne")
-    // quadrantTwo.setAttribute("class", "inputs quadrantTwo")
-    // quadrantThree.setAttribute("class", "inputs quadrantThree")
-    // quadrantFour.setAttribute("class", "inputs quadrantFour")
-
-    quadrantOne.textContent = "QuadrantOne Text"
-    quadrantTwo.textContent = "QuadrantTwo Text"
-    quadrantThree.textContent = "QuadrantThree Text"
-    quadrantFour.textContent = "QuadrantFour Text"
-
-    sampleItem.appendChild(quadrantOne)
-    sampleItem.appendChild(quadrantTwo)
-    sampleItem.appendChild(quadrantThree)
-    sampleItem.appendChild(quadrantFour)
-
-}
-
 export { outerContainer, 
     panelContainer, 
     contentContainer, 
-    sampleList, 
-    sampleItem, 
     projectTitle, 
     projectDetail, 
     listTitle, 
@@ -135,15 +107,7 @@ export { outerContainer,
     formDueDate, 
     formPriority, 
     formButton, 
-    inputsContainer, 
     buttonAddProject,
     buttonAddList,
     buttonAddItem,
-    quadrantOne, 
-    quadrantTwo, 
-    quadrantThree, 
-    quadrantFour, 
-    projectArray, 
-    projectCounter, 
-    listCounter, 
-    itemCounter };   
+    projectArray };    

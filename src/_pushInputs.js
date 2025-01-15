@@ -3,7 +3,7 @@ import Project from "./project_class.js";
 import List from "./list_class.js";
 import Item from "./item_class.js";
 
-import defaultOnPageLoad, { addPanelButtons, addItemQuadrants, outerContainer, panelContainer, contentContainer, sampleList, sampleItem, projectTitle, projectDetail, listTitle, listDetail, formContainer, formName, formDetails, formDueDate, formPriority, formButton, inputsContainer, buttonAddProject, buttonAddList, buttonAddItem, quadrantOne, quadrantTwo, quadrantThree, quadrantFour, projectArray, projectCounter, listCounter, itemCounter } from "./global_scope.js";
+import defaultOnPageLoad, { outerContainer, panelContainer, contentContainer, projectTitle, projectDetail, listTitle, listDetail, formContainer, formName, formDetails, formDueDate, formPriority, formButton, buttonAddProject, buttonAddList, buttonAddItem, projectArray } from "./global_scope.js";
 
 export default function _pushInputsToArray(e) {
 
