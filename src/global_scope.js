@@ -34,11 +34,11 @@ export default function defaultOnPageLoad() {
     
     // Add sample project details and action buttons to Left Panel 
     projectTitle.setAttribute("class", "inputs projectTitle")
-    projectTitle.textContent = "projectTitle TEXT TEXT"
+    projectTitle.textContent = "projectTitle"
     panelContainer.appendChild(projectTitle)
     
     projectDetail.setAttribute("class", "inputs projectDetail")
-    projectDetail.textContent = "projectDetail TEXT TEXT"
+    projectDetail.textContent = "projectDetail"
     panelContainer.appendChild(projectDetail)
     
     formContainer.setAttribute("class", "form container")
@@ -52,8 +52,8 @@ export default function defaultOnPageLoad() {
     listTitle.setAttribute("class", "inputs listTitle")
     listDetail.setAttribute("class", "inputs listDetail")
     
-    listTitle.textContent = "listTitle TEXT TEXT"
-    listDetail.textContent = "listDetail TEXT TEXT"
+    listTitle.textContent = "listTitle"
+    listDetail.textContent = "listDetail"
     
     quadrantOne.textContent = "QuadrantOne Text"
     quadrantTwo.textContent = "QuadrantTwo Text"

@@ -64,10 +64,10 @@ export default function _appendInputsToDisplay(e) {
         const priorityInput = document.querySelector(".priority").value
         quadrantFour.textContent = priorityInput
 
-        quadrantOne.setAttribute("class", "quadrantOne item")
-        quadrantTwo.setAttribute("class", "quadrantTwo item")
-        quadrantThree.setAttribute("class", "quadrantThree item")
-        quadrantFour.setAttribute("class", "quadrantFour item")
+        quadrantOne.setAttribute("class", "quadrantOne quadrant")
+        quadrantTwo.setAttribute("class", "quadrantTwo quadrant")
+        quadrantThree.setAttribute("class", "quadrantThree quadrant")
+        quadrantFour.setAttribute("class", "quadrantFour quadrant")
         inputsContainer.appendChild(quadrantOne)
         inputsContainer.appendChild(quadrantTwo)       
         inputsContainer.appendChild(quadrantThree)
