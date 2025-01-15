@@ -28,6 +28,10 @@ const quadrantFour = document.createElement("li")
 
 const projectArray = []
 
+let projectCounter = 0
+let listCounter = 0
+let itemCounter = 0
+
 // IN _pushInputs
 // const nameInput = document.querySelector(".name").value
 // const detailsInput = document.querySelector(".details").value
@@ -41,39 +45,43 @@ const projectArray = []
 // quadrantFour.textContent = priorityInput
 
 export default function defaultOnPageLoad() {
-    
+
+    ``
     // Add sample project details and action buttons to Left Panel 
     projectTitle.setAttribute("class", "inputs projectTitle")
     projectTitle.textContent = "projectTitle TEXT TEXT"
     panelContainer.appendChild(projectTitle)
-
+    
     projectDetail.setAttribute("class", "inputs projectDetail")
     projectDetail.textContent = "projectDetail TEXT TEXT"
     panelContainer.appendChild(projectDetail)
-
+    
     formContainer.setAttribute("class", "form container")
     panelContainer.appendChild(formContainer)
-
+    
     addPanelButtons()
-
+    
     // Create sample list and item
     sampleList.setAttribute("class", "list wrapper sample")
     sampleItem.setAttribute("class", "item wrapper sample")
     listTitle.setAttribute("class", "inputs listTitle")
     listDetail.setAttribute("class", "inputs listDetail")
-
+    
     listTitle.textContent = "listTitle TEXT TEXT"
     listDetail.textContent = "listDetail TEXT TEXT"
     
     addItemQuadrants()
-
+    
     // Add completed list to right-hand content box
+    const projectContainer = document.createElement("div")
+    projectContainer.setAttribute("class", "project-container")
+    contentContainer.appendChild(projectContainer)
+
     sampleList.appendChild(listTitle)
     sampleList.appendChild(listDetail)
 
     sampleList.appendChild(sampleItem)
-    contentContainer.appendChild(sampleList)
-
+    projectContainer.appendChild(sampleList)
 
 }
 
@@ -95,10 +103,10 @@ export const addPanelButtons = function() {
 
 export const addItemQuadrants = function() {
 
-    quadrantOne.setAttribute("class", "inputs quadrantOne")
-    quadrantTwo.setAttribute("class", "inputs quadrantTwo")
-    quadrantThree.setAttribute("class", "inputs quadrantThree")
-    quadrantFour.setAttribute("class", "inputs quadrantFour")
+    // quadrantOne.setAttribute("class", "inputs quadrantOne")
+    // quadrantTwo.setAttribute("class", "inputs quadrantTwo")
+    // quadrantThree.setAttribute("class", "inputs quadrantThree")
+    // quadrantFour.setAttribute("class", "inputs quadrantFour")
 
     quadrantOne.textContent = "QuadrantOne Text"
     quadrantTwo.textContent = "QuadrantTwo Text"
@@ -135,4 +143,7 @@ export { outerContainer,
     quadrantTwo, 
     quadrantThree, 
     quadrantFour, 
-    projectArray };  
+    projectArray, 
+    projectCounter, 
+    listCounter, 
+    itemCounter };   

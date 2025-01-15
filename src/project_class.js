@@ -4,7 +4,6 @@ export default class Project extends App {
     constructor(name, dueDate) {
         super(name)
         this.dueDate = dueDate
-        this.listArray = []
     }
 
     _switchProject() {

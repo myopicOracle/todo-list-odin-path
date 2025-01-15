@@ -8,12 +8,12 @@ export default class Item extends App {
         this.priority = priority
     }
 
-    _editItem() {
+    // _editItem() {
 
-    }
+    // }
 
-    _deleteItem() {
+    // _deleteItem() {
 
-    }
+    // }
 
 }

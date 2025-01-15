@@ -4,23 +4,22 @@ export default class List extends App {
     constructor(name, priority) {
         super(name)
         this.priority = priority
-        this.itemArray = []
     }
 
-    _appendList() {
+    // _appendList() {
 
-    }
+    // }
 
-    _deleteList() {
+    // _deleteList() {
 
-    }
+    // }
 
-    _switchList() {
+    // _switchList() {
 
-    }
+    // }
 
-    _editList() {
+    // _editList() {
 
-    }
+    // }
 
 }
