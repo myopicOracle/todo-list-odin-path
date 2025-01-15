@@ -4,7 +4,7 @@
 
 #panel-container {
     flex: 2;
-    width: 2fr;
+    max-width: 400px;
     height: 70vh;
     /*  */
     display: flex;
@@ -16,9 +16,14 @@
     grid-template-rows: repeat(10, 1fr); */
 }
 
-#content-container,
-.project-container {
+#content-container {
     flex: 6;
+    height: 100vh;
+    width: 100%;
+}
+
+.project-container {
+    /* flex: 6; */
     width: 6fr;
     height: 100vh;
     /*  */
@@ -34,7 +39,6 @@
     background-color: gold;
     border: 4px solid violet;
     border-radius: 10px;
-    padding: 20px 0;
     /*  */
     display:flex;
     flex-direction: column;
@@ -51,9 +55,19 @@
     padding: 0;
 }
 
+button.submit {
+    color: white;
+    background-color: purple;
+    font-family: monospace;
+    font-size: 14px;
+    width: 20%;
+    height: 20px;
+    border: 2px solid gold;
+    border-radius: 10px;
+}
+
+
 .button {
-    /* grid-area: 3 / 1 / 6 / 2; */
-    /*  */
     color: white;
     background-color: magenta;
     font-family: monospace;
@@ -61,7 +75,6 @@
     width: 60%;
     height: 40px;
     margin: 0 auto;
-    /* padding: 50% 0; */
     border: 4px solid purple;
     border-radius: 15px;
 }
@@ -100,6 +113,17 @@
 }
 
 .listDetail {
+    color: darkgrey;
+    font-family: monospace;
+    font-size: 16px;
+    /* width: 50px;
+    height: 20px; */
+    margin: 0 auto;
+    /* padding: 50% 0; */
+    border: 2px solid blue;
+}
+
+.listPriority {
     color: darkgrey;
     font-family: monospace;
     font-size: 16px;

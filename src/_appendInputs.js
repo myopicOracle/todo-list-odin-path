@@ -18,13 +18,13 @@ export default function _appendInputsToDisplay(e) {
     if (e.target.classList.contains("project")) {
         projectCounter += 1
         let identifier = `project-${projectCounter}`
-        inputsContainer.setAttribute("class", `${identifier}`)
+        inputsContainer.setAttribute("class", `project ${identifier}`)
 
         const dueDateInput = document.querySelector(".dueDate").value
         quadrantThree.textContent = dueDateInput
 
-        quadrantOne.setAttribute("class", "quadrantOne project")
-        quadrantThree.setAttribute("class", "quadrantThree project")
+        quadrantOne.setAttribute("class", "quadrantOne projectTitle")
+        quadrantThree.setAttribute("class", "quadrantThree projectDueDate")
         inputsContainer.appendChild(quadrantOne)
         inputsContainer.appendChild(quadrantThree)
         
@@ -34,13 +34,13 @@ export default function _appendInputsToDisplay(e) {
     if (e.target.classList.contains("list")) {
         listCounter += 1
         let identifier = `list-${listCounter}`
-        inputsContainer.setAttribute("class", `${identifier}`)
+        inputsContainer.setAttribute("class", `list ${identifier}`)
 
         const priorityInput = document.querySelector(".priority").value
         quadrantFour.textContent = priorityInput
 
-        quadrantOne.setAttribute("class", "quadrantOne list")
-        quadrantFour.setAttribute("class", "quadrantFour list")
+        quadrantOne.setAttribute("class", "inputs listTitle")
+        quadrantFour.setAttribute("class", "inputs listPriority")
         inputsContainer.appendChild(quadrantOne)
         inputsContainer.appendChild(quadrantFour)
 
@@ -55,7 +55,7 @@ export default function _appendInputsToDisplay(e) {
     if (e.target.classList.contains("item")) {
         itemCounter += 1
         let identifier = `item-${itemCounter}`
-        inputsContainer.setAttribute("class", `${identifier}`)
+        inputsContainer.setAttribute("class", `item ${identifier}`)
 
         const detailsInput = document.querySelector(".details").value
         quadrantTwo.textContent = detailsInput
