@@ -4,16 +4,25 @@ import _submitForm from "./_submitForm.js";
 
 export default function _showForm(e) {
 
+    document.querySelector(".form.container").innerHTML = ''
     const containerInstance = document.querySelector(".form.container")
-    
+
     formName.setAttribute("class", "form name")    
     formName.placeholder = "Please enter a Title."
+    formName.value = ''
+    
     formDetails.setAttribute("class", "form details")    
     formDetails.placeholder = "Include a Description."
+    formDetails.value = ''
+    
     formDueDate.setAttribute("class", "form dueDate")    
     formDueDate.placeholder = "What is the Due Date?"
+    formDueDate.value = ''
+    
     formPriority.setAttribute("class", "form priority")
     formPriority.placeholder = "Choose the Priority Lvl."
+    formPriority.value = ''
+    
     formButton.setAttribute("class", "form submit")
     
     containerInstance.appendChild(formName)
