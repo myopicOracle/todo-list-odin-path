@@ -1,25 +1,17 @@
 export default class App {
-    rootArray = [];
-    listArray = [];
-    itemArray = [];
+  rootArray = [];
+  listArray = [];
+  itemArray = [];
 
-    constructor(name) {
-        this.name
-    }
+  constructor(name) {
+    this.name;
+  }
 
-    _clearPage() {
+  _clearPage() {}
 
-    }
+  _removeChild() {}
 
-    _removeChild() {
+  _getInputs() {}
 
-    }
-
-    _getInputs() {
-
-    }
-
-    _editContent() {
-
-    }
+  _editContent() {}
 }

@@ -1,58 +1,71 @@
-import defaultOnPageLoad, { addPanelButtons, addItemQuadrants, outerContainer, panelContainer, contentContainer, sampleList, sampleItem, projectTitle, projectDetail, listTitle, listDetail, formContainer, formName, formDetails, formDueDate, formPriority, formButton, inputsContainer, buttonAddProject, buttonAddList, buttonAddItem, quadrantOne, quadrantTwo, quadrantThree, quadrantFour, projectArray, projectCounter, listCounter, itemCounter } from "./global_scope.js";
+import defaultOnPageLoad, {
+  outerContainer,
+  panelContainer,
+  contentContainer,
+  projectTitle,
+  projectDetail,
+  listTitle,
+  listDetail,
+  formContainer,
+  formName,
+  formDetails,
+  formDueDate,
+  formPriority,
+  formButton,
+  buttonAddProject,
+  buttonAddList,
+  buttonAddItem,
+  projectArray,
+} from "./global_scope.js";
 
 import _submitForm from "./_submitForm.js";
 
 export default function _showForm(e) {
+  document.querySelector(".form.container").innerHTML = "";
+  const containerInstance = document.querySelector(".form.container");
 
-    document.querySelector(".form.container").innerHTML = ''
-    const containerInstance = document.querySelector(".form.container")
+  formName.setAttribute("class", "form name");
+  formName.value = "";
 
-    formName.setAttribute("class", "form name")    
-    formName.value = ''
-    
-    formDetails.setAttribute("class", "form details")
-    formDetails.placeholder = "Include a Description."    
-    formDetails.value = ''
-    
-    formDueDate.setAttribute("class", "form dueDate")
-    formDueDate.placeholder = "What is the Due Date?"    
-    formDueDate.value = ''
-    
-    formPriority.setAttribute("class", "form priority")
-    formPriority.placeholder = "Choose the Priority Lvl."
-    formPriority.value = ''
-        
-    
-    if (e.target.classList.contains("project")) {
-        formName.placeholder = "PROJECT NAME"
-        formButton.setAttribute("class", "project form submit")
-    
-        containerInstance.appendChild(formName)
-        containerInstance.appendChild(formDueDate)
-        
-    } else if (e.target.classList.contains("list")) {
-        formName.placeholder = "LIST TITLE"
-        formButton.setAttribute("class", "list form submit")
-    
-        containerInstance.appendChild(formName)
-        containerInstance.appendChild(formPriority)
-        
-    } else if (e.target.classList.contains("item")) {
-        formName.placeholder = "TO-DO TASK NAME"
-        formButton.setAttribute("class", "item form submit")
+  formDetails.setAttribute("class", "form details");
+  formDetails.placeholder = "Include a Description.";
+  formDetails.value = "";
 
-        containerInstance.appendChild(formName)
-        containerInstance.appendChild(formDetails)            
-        containerInstance.appendChild(formDueDate)
-        containerInstance.appendChild(formPriority)
-        
-    } else alert("ERROR")
-    
-    containerInstance.appendChild(formButton)
+  formDueDate.setAttribute("class", "form dueDate");
+  formDueDate.placeholder = "What is the Due Date?";
+  formDueDate.value = "";
 
-    const submitButton = document.querySelector(".form.submit")
-    submitButton.textContent = "Create"
-    submitButton.addEventListener("click", _submitForm)
+  formPriority.setAttribute("class", "form priority");
+  formPriority.placeholder = "Choose the Priority Lvl.";
+  formPriority.value = "";
 
-console.log("END OF _showForm()")
+  if (e.target.classList.contains("project")) {
+    formName.placeholder = "PROJECT NAME";
+    formButton.setAttribute("class", "project form submit");
+
+    containerInstance.appendChild(formName);
+    containerInstance.appendChild(formDueDate);
+  } else if (e.target.classList.contains("list")) {
+    formName.placeholder = "LIST TITLE";
+    formButton.setAttribute("class", "list form submit");
+
+    containerInstance.appendChild(formName);
+    containerInstance.appendChild(formPriority);
+  } else if (e.target.classList.contains("item")) {
+    formName.placeholder = "TO-DO TASK NAME";
+    formButton.setAttribute("class", "item form submit");
+
+    containerInstance.appendChild(formName);
+    containerInstance.appendChild(formDetails);
+    containerInstance.appendChild(formDueDate);
+    containerInstance.appendChild(formPriority);
+  } else alert("ERROR");
+
+  containerInstance.appendChild(formButton);
+
+  const submitButton = document.querySelector(".form.submit");
+  submitButton.textContent = "Create";
+  submitButton.addEventListener("click", _submitForm);
+
+  console.log("END OF _showForm()");
 }

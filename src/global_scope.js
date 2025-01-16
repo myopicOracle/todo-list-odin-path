@@ -1,142 +1,141 @@
-const outerContainer = document.querySelector("#outer-container")
-const panelContainer = document.querySelector("#panel-container")
-const contentContainer = document.querySelector("#content-container")
+const outerContainer = document.querySelector("#outer-container");
+const panelContainer = document.querySelector("#panel-container");
+const contentContainer = document.querySelector("#content-container");
 
-const buttonAddProject = document.createElement("button")
-const buttonAddList = document.createElement("button")
-const buttonAddItem = document.createElement("button")
+const buttonAddProject = document.createElement("button");
+const buttonAddList = document.createElement("button");
+const buttonAddItem = document.createElement("button");
 
-const projectTitle = document.createElement("div")
-const projectDetail = document.createElement("div")
-const listTitle = document.createElement("div")
-const listDetail = document.createElement("div")
+const projectTitle = document.createElement("div");
+const projectDetail = document.createElement("div");
+const listTitle = document.createElement("div");
+const listDetail = document.createElement("div");
 
-const formContainer = document.createElement("div")
-const formName = document.createElement("input")
-const formDetails = document.createElement("input")
-const formDueDate = document.createElement("input")
-const formPriority = document.createElement("input")
-const formButton = document.createElement("button")
+const formContainer = document.createElement("div");
+const formName = document.createElement("input");
+const formDetails = document.createElement("input");
+const formDueDate = document.createElement("input");
+const formPriority = document.createElement("input");
+const formButton = document.createElement("button");
 
-const projectArray = []
+const projectArray = [];
 
 // exports below
 export default function defaultOnPageLoad() {
+  // if in global scope, causes els to be overwritten
+  const sampleList = document.createElement("div");
+  const sampleItem = document.createElement("div");
 
-    // if in global scope, causes els to be overwritten
-    const sampleList = document.createElement("div")
-    const sampleItem = document.createElement("div")
+  const quadrantOne = document.createElement("div");
+  const quadrantTwo = document.createElement("div");
+  const quadrantThree = document.createElement("div");
+  const quadrantFour = document.createElement("div");
 
-    const quadrantOne = document.createElement("div")
-    const quadrantTwo = document.createElement("div")
-    const quadrantThree = document.createElement("div")
-    const quadrantFour = document.createElement("div")
+  const deleteProjectButton = document.createElement("button");
+  deleteProjectButton.setAttribute("class", "project button delete");
+  deleteProjectButton.textContent = "Delete Project";
+  deleteProjectButton.addEventListener("click", (e) => {
+    document.querySelector(".project-container").remove();
+  });
 
-    const deleteProjectButton = document.createElement("button")
-    deleteProjectButton.setAttribute('class', 'project button delete')
-    deleteProjectButton.textContent = "Delete Project"
-    deleteProjectButton.addEventListener('click', (e) => {
-        document.querySelector('.project-container').remove()
-    })
+  const deleteListButton = document.createElement("button");
+  deleteListButton.setAttribute("class", "list button delete");
+  deleteListButton.textContent = "Delete List";
+  deleteListButton.addEventListener("click", (e) => {
+    e.target.parentElement.remove();
+  });
 
-    const deleteListButton = document.createElement("button")
-    deleteListButton.setAttribute('class', 'list button delete')
-    deleteListButton.textContent = "Delete List"
-    deleteListButton.addEventListener('click', (e) => {
-        e.target.parentElement.remove()
-    })
+  const deleteItemButton = document.createElement("button");
+  deleteItemButton.addEventListener("click", (e) => {
+    e.target.parentElement.remove();
+  });
 
-    const deleteItemButton = document.createElement("button")
-    deleteItemButton.addEventListener('click', (e) => {
-        e.target.parentElement.remove()
-    })
-    
-    // Add sample project details and action buttons to Left Panel 
-    panelContainer.appendChild(deleteProjectButton)
+  // Add sample project details and action buttons to Left Panel
+  panelContainer.appendChild(deleteProjectButton);
 
-    projectTitle.setAttribute("class", "inputs projectTitle")
-    projectTitle.textContent = "projectTitle"
-    panelContainer.appendChild(projectTitle)
-    
-    projectDetail.setAttribute("class", "inputs projectDetail")
-    projectDetail.textContent = "projectDetail"
-    panelContainer.appendChild(projectDetail)
-    
-    formContainer.setAttribute("class", "form container")
-    panelContainer.appendChild(formContainer)
-    
-    addPanelButtons()
-    
-    // Create sample list and item
-    sampleList.setAttribute("class", "list wrapper sample")
-    sampleItem.setAttribute("class", "item wrapper sample")
-    listTitle.setAttribute("class", "inputs listTitle")
-    listDetail.setAttribute("class", "inputs listDetail")
-    
-    listTitle.textContent = "listTitle"
-    listDetail.textContent = "listDetail"
-    
-    quadrantOne.setAttribute('class', 'quadrantOne quadrant')
-    quadrantTwo.setAttribute('class', 'quadrantTwo quadrant')
-    quadrantThree.setAttribute('class', 'quadrantThree quadrant')
-    quadrantFour.setAttribute('class', 'quadrantFour quadrant')
-    deleteItemButton.setAttribute('class', 'item button delete')
+  projectTitle.setAttribute("class", "inputs projectTitle");
+  projectTitle.textContent = "projectTitle";
+  panelContainer.appendChild(projectTitle);
 
-    quadrantOne.textContent = "One"
-    quadrantTwo.textContent = "Two"
-    quadrantThree.textContent = "Three"
-    quadrantFour.textContent = "Four"
-    deleteItemButton.textContent = "X"
+  projectDetail.setAttribute("class", "inputs projectDetail");
+  projectDetail.textContent = "projectDetail";
+  panelContainer.appendChild(projectDetail);
 
-    sampleItem.appendChild(quadrantOne)
-    sampleItem.appendChild(quadrantTwo)
-    sampleItem.appendChild(quadrantThree)
-    sampleItem.appendChild(quadrantFour)
-    sampleItem.appendChild(deleteItemButton)
-    
-    // Add completed list to right-hand content box
-    const projectContainer = document.createElement("div")
-    projectContainer.setAttribute("class", "project-container project-1")
-    contentContainer.appendChild(projectContainer)
+  formContainer.setAttribute("class", "form container");
+  panelContainer.appendChild(formContainer);
 
-    sampleList.appendChild(deleteListButton)
-    sampleList.appendChild(listTitle)
-    sampleList.appendChild(listDetail)
-    sampleList.appendChild(sampleItem)
+  addPanelButtons();
 
-    projectContainer.appendChild(sampleList)
+  // Create sample list and item
+  sampleList.setAttribute("class", "list wrapper sample");
+  sampleItem.setAttribute("class", "item wrapper sample");
+  listTitle.setAttribute("class", "inputs listTitle");
+  listDetail.setAttribute("class", "inputs listDetail");
+
+  listTitle.textContent = "listTitle";
+  listDetail.textContent = "listDetail";
+
+  quadrantOne.setAttribute("class", "quadrantOne quadrant");
+  quadrantTwo.setAttribute("class", "quadrantTwo quadrant");
+  quadrantThree.setAttribute("class", "quadrantThree quadrant");
+  quadrantFour.setAttribute("class", "quadrantFour quadrant");
+  deleteItemButton.setAttribute("class", "item button delete");
+
+  quadrantOne.textContent = "One";
+  quadrantTwo.textContent = "Two";
+  quadrantThree.textContent = "Three";
+  quadrantFour.textContent = "Four";
+  deleteItemButton.textContent = "X";
+
+  sampleItem.appendChild(quadrantOne);
+  sampleItem.appendChild(quadrantTwo);
+  sampleItem.appendChild(quadrantThree);
+  sampleItem.appendChild(quadrantFour);
+  sampleItem.appendChild(deleteItemButton);
+
+  // Add completed list to right-hand content box
+  const projectContainer = document.createElement("div");
+  projectContainer.setAttribute("class", "project-container project-1");
+  contentContainer.appendChild(projectContainer);
+
+  sampleList.appendChild(deleteListButton);
+  sampleList.appendChild(listTitle);
+  sampleList.appendChild(listDetail);
+  sampleList.appendChild(sampleItem);
+
+  projectContainer.appendChild(sampleList);
 }
 
-export const addPanelButtons = function() {
+export const addPanelButtons = function () {
+  buttonAddProject.setAttribute("class", "buttonAddProject project button add");
+  buttonAddList.setAttribute("class", "buttonAddList list button add");
+  buttonAddItem.setAttribute("class", "buttonAddItem item button add");
 
-    buttonAddProject.setAttribute("class", "buttonAddProject project button add")
-    buttonAddList.setAttribute("class", "buttonAddList list button add")
-    buttonAddItem.setAttribute("class", "buttonAddItem item button add")
+  buttonAddProject.textContent = "Add Project";
+  buttonAddList.textContent = "Add List";
+  buttonAddItem.textContent = "Add Item";
 
-    buttonAddProject.textContent = "Add Project"
-    buttonAddList.textContent = "Add List"
-    buttonAddItem.textContent = "Add Item"
+  panelContainer.appendChild(buttonAddProject);
+  panelContainer.appendChild(buttonAddList);
+  panelContainer.appendChild(buttonAddItem);
+};
 
-    panelContainer.appendChild(buttonAddProject)
-    panelContainer.appendChild(buttonAddList)
-    panelContainer.appendChild(buttonAddItem)
-
-}
-
-export { outerContainer, 
-    panelContainer, 
-    contentContainer, 
-    projectTitle, 
-    projectDetail, 
-    listTitle, 
-    listDetail, 
-    formContainer,
-    formName, 
-    formDetails, 
-    formDueDate, 
-    formPriority, 
-    formButton, 
-    buttonAddProject,
-    buttonAddList,
-    buttonAddItem,
-    projectArray };    
+export {
+  outerContainer,
+  panelContainer,
+  contentContainer,
+  projectTitle,
+  projectDetail,
+  listTitle,
+  listDetail,
+  formContainer,
+  formName,
+  formDetails,
+  formDueDate,
+  formPriority,
+  formButton,
+  buttonAddProject,
+  buttonAddList,
+  buttonAddItem,
+  projectArray,
+};

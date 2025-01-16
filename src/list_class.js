@@ -1,25 +1,24 @@
-import App from "./app_class.js"
+import App from "./app_class.js";
 
 export default class List extends App {
-    constructor(name, priority) {
-        super(name)
-        this.priority = priority
-    }
+  constructor(name, priority) {
+    super(name);
+    this.priority = priority;
+  }
 
-    // _appendList() {
+  // _appendList() {
 
-    // }
+  // }
 
-    // _deleteList() {
+  // _deleteList() {
 
-    // }
+  // }
 
-    // _switchList() {
+  // _switchList() {
 
-    // }
+  // }
 
-    // _editList() {
+  // _editList() {
 
-    // }
-
+  // }
 }
