@@ -4,7 +4,7 @@ export default class App {
   itemArray = [];
 
   constructor(name) {
-    this.name;
+    this.name = name;
   }
 
   _clearPage() {}

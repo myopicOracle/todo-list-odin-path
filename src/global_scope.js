@@ -20,7 +20,7 @@ const formButton = document.createElement("button");
 
 const projectArray = [];
 
-// exports below
+// --- exports below this line ---
 export default function defaultOnPageLoad() {
   // if in global scope, causes els to be overwritten
   const sampleList = document.createElement("div");
@@ -34,7 +34,7 @@ export default function defaultOnPageLoad() {
   const deleteProjectButton = document.createElement("button");
   deleteProjectButton.setAttribute("class", "project button delete");
   deleteProjectButton.textContent = "Delete Project";
-  deleteProjectButton.addEventListener("click", (e) => {
+  deleteProjectButton.addEventListener("click", () => {
     document.querySelector(".project-container").remove();
   });
 
@@ -103,21 +103,24 @@ export default function defaultOnPageLoad() {
   sampleList.appendChild(listDetail);
   sampleList.appendChild(sampleItem);
 
+  buttonAddItem.setAttribute("class", "buttonAddItem item button add");
+  sampleList.style.cssText = "position: relative;";
+  buttonAddItem.style.cssText = "position: absolute; right: 5px; bottom: 5px; color: white; background-color: darkred; font-family: monospace; font-size: 16px; font-weight: 700; width: 40%; height: 30px; margin: 0 auto; border: 2px solid purple; border-radius: 10px;";
+  buttonAddItem.textContent = "+Item";
+  sampleList.appendChild(buttonAddItem);
+
   projectContainer.appendChild(sampleList);
 }
 
 export const addPanelButtons = function () {
   buttonAddProject.setAttribute("class", "buttonAddProject project button add");
   buttonAddList.setAttribute("class", "buttonAddList list button add");
-  buttonAddItem.setAttribute("class", "buttonAddItem item button add");
 
   buttonAddProject.textContent = "Add Project";
   buttonAddList.textContent = "Add List";
-  buttonAddItem.textContent = "Add Item";
 
   panelContainer.appendChild(buttonAddProject);
   panelContainer.appendChild(buttonAddList);
-  panelContainer.appendChild(buttonAddItem);
 };
 
 export {

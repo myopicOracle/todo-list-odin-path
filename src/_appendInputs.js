@@ -1,23 +1,5 @@
 import _deleteElement from "./_delete.js";
-import defaultOnPageLoad, {
-  outerContainer,
-  panelContainer,
-  contentContainer,
-  projectTitle,
-  projectDetail,
-  listTitle,
-  listDetail,
-  formContainer,
-  formName,
-  formDetails,
-  formDueDate,
-  formPriority,
-  formButton,
-  buttonAddProject,
-  buttonAddList,
-  buttonAddItem,
-  projectArray,
-} from "./global_scope.js";
+import { contentContainer } from "./global_scope.js";
 
 let projectCounter = 1;
 let listCounter = 0;
@@ -107,12 +89,16 @@ export default function _appendInputsToDisplay(e) {
     inputsContainer.appendChild(quadrantFour);
 
     inputsContainer.appendChild(deleteItemButton);
+    e.target.parentElement.appendChild(inputsContainer);
 
-    if (document.querySelector(`.list-${listCounter}`)) {
-      let parentContainer = document.querySelector(`.list-${listCounter}`);
-      parentContainer.appendChild(inputsContainer);
-    } else alert("You must create a list first!");
   }
+
+  // OLD CODE: when 'add item' button in panel instead of on list
+  //   if (document.querySelector(`.list-${listCounter}`)) {
+  //     let parentContainer = document.querySelector(`.list-${listCounter}`);
+  //     parentContainer.appendChild(inputsContainer);
+  //   } else alert("You must create a list first!");
+  // }
 
   console.log("END OF _appendInputsToDisplay()");
 }

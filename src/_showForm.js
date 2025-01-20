@@ -1,21 +1,9 @@
-import defaultOnPageLoad, {
-  outerContainer,
-  panelContainer,
-  contentContainer,
-  projectTitle,
-  projectDetail,
-  listTitle,
-  listDetail,
-  formContainer,
+import {
   formName,
   formDetails,
   formDueDate,
   formPriority,
   formButton,
-  buttonAddProject,
-  buttonAddList,
-  buttonAddItem,
-  projectArray,
 } from "./global_scope.js";
 
 import _submitForm from "./_submitForm.js";

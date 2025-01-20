@@ -1,27 +1,6 @@
-import App from "./app_class.js";
 import Project from "./project_class.js";
 import List from "./list_class.js";
 import Item from "./item_class.js";
-
-import defaultOnPageLoad, {
-  outerContainer,
-  panelContainer,
-  contentContainer,
-  projectTitle,
-  projectDetail,
-  listTitle,
-  listDetail,
-  formContainer,
-  formName,
-  formDetails,
-  formDueDate,
-  formPriority,
-  formButton,
-  buttonAddProject,
-  buttonAddList,
-  buttonAddItem,
-  projectArray,
-} from "./global_scope.js";
 
 export default function _pushInputsToArray(e) {
   const nameInput = document.querySelector(".name").value;
@@ -72,8 +51,5 @@ export default function _pushInputsToArray(e) {
     console.log(itemArray);
   }
 
-  // console.log(projectArray)
-  // console.log(listArray)
-  // console.log(itemArray)
   console.log("END OF _pushInputsToArray()");
 }
