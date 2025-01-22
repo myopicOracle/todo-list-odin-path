@@ -4,7 +4,6 @@ const contentContainer = document.querySelector("#content-container");
 
 const buttonAddProject = document.createElement("button");
 const buttonAddList = document.createElement("button");
-const buttonAddItem = document.createElement("button");
 
 const projectTitle = document.createElement("div");
 const projectDetail = document.createElement("div");
@@ -58,11 +57,11 @@ export default function defaultOnPageLoad() {
   panelContainer.appendChild(deleteProjectButton);
 
   projectTitle.setAttribute("class", "inputs projectTitle");
-  projectTitle.textContent = "projectTitle";
+  projectTitle.textContent = "My To-Do List";
   panelContainer.appendChild(projectTitle);
 
   projectDetail.setAttribute("class", "inputs projectDetail");
-  projectDetail.textContent = "projectDetail";
+  projectDetail.textContent = "Add a list!";
   panelContainer.appendChild(projectDetail);
 
   formContainer.setAttribute("class", "form container");
@@ -146,6 +145,5 @@ export {
   formButton,
   buttonAddProject,
   buttonAddList,
-  buttonAddItem,
   projectArray,
 };

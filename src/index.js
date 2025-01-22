@@ -2,8 +2,7 @@ import "./styles.css";
 
 import defaultOnPageLoad, {
   buttonAddProject,
-  buttonAddList,
-  buttonAddItem,
+  buttonAddList
 } from "./global_scope.js";
 
 import _showForm from "./_showForm.js";
@@ -14,4 +13,3 @@ defaultOnPageLoad();
 
 buttonAddProject.addEventListener("click", _showForm);
 buttonAddList.addEventListener("click", _showForm);
-buttonAddItem.addEventListener("click", _showForm);

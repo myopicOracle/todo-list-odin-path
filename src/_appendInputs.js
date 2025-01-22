@@ -1,6 +1,6 @@
 import _deleteElement from "./_delete.js";
 import _showForm from "./_showForm.js";
-import { contentContainer, buttonAddItem } from "./global_scope.js";
+import { contentContainer } from "./global_scope.js";
 
 let projectCounter = 1;
 let listCounter = 0;
@@ -27,6 +27,12 @@ export default function _appendInputsToDisplay(e) {
   deleteItemButton.setAttribute("class", "item button delete");
   deleteItemButton.textContent = "X";
   deleteItemButton.addEventListener("click", _deleteElement);
+
+  const buttonAddItem = document.createElement("button");
+  buttonAddItem.setAttribute("class", "buttonAddItem item button add");
+  buttonAddItem.style.cssText += "position: absolute; right: 5px; bottom: 5px; color: white; background-color: magenta; font-family: monospace; font-size: 16px; font-weight: 700; width: 40%; height: 30px; margin: 0 auto; border: 2px solid purple; border-radius: 10px;";
+  buttonAddItem.textContent = "+Item";
+  buttonAddItem.addEventListener("click", _showForm);
 
   const nameInput = document.querySelector(".name").value;
   quadrantOne.textContent = nameInput;
@@ -68,9 +74,6 @@ export default function _appendInputsToDisplay(e) {
     inputsContainer.appendChild(quadrantOne);
     inputsContainer.appendChild(quadrantFour);
 
-    buttonAddItem.setAttribute("class", "buttonAddItem item button add");
-    buttonAddItem.style.cssText += "position: absolute; right: 5px; bottom: 5px; color: white; background-color: darkred; font-family: monospace; font-size: 16px; font-weight: 700; width: 40%; height: 30px; margin: 0 auto; border: 2px solid purple; border-radius: 10px;";
-    buttonAddItem.textContent = "+Item";
     inputsContainer.appendChild(buttonAddItem);
 
     let parentContainer = document.querySelector(`.project-${projectCounter}`);
