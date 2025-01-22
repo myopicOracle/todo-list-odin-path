@@ -19,7 +19,7 @@ export default function _pushInputsToArray(e) {
   }
 
   if (e.target.classList.contains("list")) {
-    const priorityInput = document.querySelector(".priority").value;
+    const priorityInput = document.getElementById("priority").value;
 
     const newObj = new List(nameInput, priorityInput);
     console.log("listObj: ", newObj);
@@ -34,7 +34,7 @@ export default function _pushInputsToArray(e) {
   if (e.target.classList.contains("item")) {
     const detailsInput = document.querySelector(".details").value;
     const dueDateInput = document.querySelector(".dueDate").value;
-    const priorityInput = document.querySelector(".priority").value;
+    const priorityInput = document.getElementById("priority").value;
 
     const newObj = new Item(
       nameInput,

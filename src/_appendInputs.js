@@ -66,7 +66,7 @@ export default function _appendInputsToDisplay(e) {
 
     inputsContainer.appendChild(deleteListButton);
 
-    const priorityInput = document.querySelector(".priority").value;
+    const priorityInput = document.getElementById("priority").value;
     quadrantFour.textContent = priorityInput;
 
     quadrantOne.setAttribute("class", "inputs listTitle");
@@ -94,7 +94,7 @@ export default function _appendInputsToDisplay(e) {
     quadrantTwo.textContent = detailsInput;
     const dueDateInput = document.querySelector(".dueDate").value;
     quadrantThree.textContent = dueDateInput;
-    const priorityInput = document.querySelector(".priority").value;
+    const priorityInput = document.getElementById("priority").value;
     quadrantFour.textContent = priorityInput;
 
     quadrantOne.setAttribute("class", "quadrantOne quadrant");

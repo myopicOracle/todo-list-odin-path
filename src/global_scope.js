@@ -14,7 +14,7 @@ const formContainer = document.createElement("div");
 const formName = document.createElement("input");
 const formDetails = document.createElement("input");
 const formDueDate = document.createElement("input");
-const formPriority = document.createElement("input");
+const formPriority = document.createElement("div");
 const formButton = document.createElement("button");
 
 const projectArray = [];

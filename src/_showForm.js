@@ -23,7 +23,14 @@ export default function _showForm(e) {
   formDueDate.placeholder = "What is the Due Date?";
   formDueDate.value = "";
 
-  formPriority.setAttribute("class", "form priority");
+  formPriority.innerHTML = `
+    <label for="priority">Select Priority</label>
+    <select name="priority" id="priority">
+      <option value="High">High Priority</option>
+      <option value="Medium">Medium Priority</option>
+      <option value="Low">Low Priority</option>
+    </select>`
+  formPriority.setAttribute("class", "form priority-container");
   formPriority.placeholder = "Choose the Priority Lvl.";
   formPriority.value = "";
 
