@@ -1,5 +1,6 @@
 import _deleteElement from "./_delete.js";
-import { contentContainer } from "./global_scope.js";
+import _showForm from "./_showForm.js";
+import { contentContainer, buttonAddItem } from "./global_scope.js";
 
 let projectCounter = 1;
 let listCounter = 0;
@@ -30,6 +31,9 @@ export default function _appendInputsToDisplay(e) {
   const nameInput = document.querySelector(".name").value;
   quadrantOne.textContent = nameInput;
 
+  // test
+  console.log("response from: _appendInputs function scope")
+
   if (e.target.classList.contains("project")) {
     projectCounter += 1;
     let identifier = `project-${projectCounter}`;
@@ -51,7 +55,8 @@ export default function _appendInputsToDisplay(e) {
   if (e.target.classList.contains("list")) {
     listCounter += 1;
     let identifier = `list-${listCounter}`;
-    inputsContainer.setAttribute("class", `list ${identifier}`);
+    inputsContainer.setAttribute("id", `${identifier}`);
+    inputsContainer.setAttribute("class", "list wrapper");
 
     inputsContainer.appendChild(deleteListButton);
 
@@ -63,15 +68,25 @@ export default function _appendInputsToDisplay(e) {
     inputsContainer.appendChild(quadrantOne);
     inputsContainer.appendChild(quadrantFour);
 
+    buttonAddItem.setAttribute("class", "buttonAddItem item button add");
+    buttonAddItem.style.cssText += "position: absolute; right: 5px; bottom: 5px; color: white; background-color: darkred; font-family: monospace; font-size: 16px; font-weight: 700; width: 40%; height: 30px; margin: 0 auto; border: 2px solid purple; border-radius: 10px;";
+    buttonAddItem.textContent = "+Item";
+    inputsContainer.appendChild(buttonAddItem);
+
     let parentContainer = document.querySelector(`.project-${projectCounter}`);
     parentContainer.appendChild(inputsContainer);
   }
 
   if (e.target.classList.contains("item")) {
+    ///////////////////
+    console.log(e.target)
+    ///////////////////
     itemCounter += 1;
     let identifier = `item-${itemCounter}`;
     inputsContainer.setAttribute("class", `item wrapper ${identifier}`);
-
+    ///////////////////
+    console.log(inputsContainer)
+    ///////////////////
     const detailsInput = document.querySelector(".details").value;
     quadrantTwo.textContent = detailsInput;
     const dueDateInput = document.querySelector(".dueDate").value;
@@ -89,7 +104,12 @@ export default function _appendInputsToDisplay(e) {
     inputsContainer.appendChild(quadrantFour);
 
     inputsContainer.appendChild(deleteItemButton);
-    e.target.parentElement.appendChild(inputsContainer);
+    ///////////////////
+    console.log(e.target.parentElement)
+    ///////////////////
+    const targetListId = e.target.parentElement.id.slice(0,-5) 
+    const targetList = document.getElementById(`${targetListId}`)
+    targetList.appendChild(inputsContainer);
 
   }
 

@@ -20,16 +20,20 @@ const formButton = document.createElement("button");
 
 const projectArray = [];
 
+let currentProject;
+let currentList;
+let currentItem;
+
 // --- exports below this line ---
 export default function defaultOnPageLoad() {
   // if in global scope, causes els to be overwritten
-  const sampleList = document.createElement("div");
-  const sampleItem = document.createElement("div");
+  // const sampleList = document.createElement("div");
+  // const sampleItem = document.createElement("div");
 
-  const quadrantOne = document.createElement("div");
-  const quadrantTwo = document.createElement("div");
-  const quadrantThree = document.createElement("div");
-  const quadrantFour = document.createElement("div");
+  // const quadrantOne = document.createElement("div");
+  // const quadrantTwo = document.createElement("div");
+  // const quadrantThree = document.createElement("div");
+  // const quadrantFour = document.createElement("div");
 
   const deleteProjectButton = document.createElement("button");
   deleteProjectButton.setAttribute("class", "project button delete");
@@ -66,50 +70,53 @@ export default function defaultOnPageLoad() {
 
   addPanelButtons();
 
-  // Create sample list and item
-  sampleList.setAttribute("class", "list wrapper sample");
-  sampleItem.setAttribute("class", "item wrapper sample");
-  listTitle.setAttribute("class", "inputs listTitle");
-  listDetail.setAttribute("class", "inputs listDetail");
-
-  listTitle.textContent = "listTitle";
-  listDetail.textContent = "listDetail";
-
-  quadrantOne.setAttribute("class", "quadrantOne quadrant");
-  quadrantTwo.setAttribute("class", "quadrantTwo quadrant");
-  quadrantThree.setAttribute("class", "quadrantThree quadrant");
-  quadrantFour.setAttribute("class", "quadrantFour quadrant");
-  deleteItemButton.setAttribute("class", "item button delete");
-
-  quadrantOne.textContent = "One";
-  quadrantTwo.textContent = "Two";
-  quadrantThree.textContent = "Three";
-  quadrantFour.textContent = "Four";
-  deleteItemButton.textContent = "X";
-
-  sampleItem.appendChild(quadrantOne);
-  sampleItem.appendChild(quadrantTwo);
-  sampleItem.appendChild(quadrantThree);
-  sampleItem.appendChild(quadrantFour);
-  sampleItem.appendChild(deleteItemButton);
-
-  // Add completed list to right-hand content box
   const projectContainer = document.createElement("div");
   projectContainer.setAttribute("class", "project-container project-1");
   contentContainer.appendChild(projectContainer);
 
-  sampleList.appendChild(deleteListButton);
-  sampleList.appendChild(listTitle);
-  sampleList.appendChild(listDetail);
-  sampleList.appendChild(sampleItem);
+  // // Create sample list and item
+  // sampleList.setAttribute("class", "list wrapper sample");
+  // sampleItem.setAttribute("class", "item wrapper sample");
+  // listTitle.setAttribute("class", "inputs listTitle");
+  // listDetail.setAttribute("class", "inputs listDetail");
 
-  buttonAddItem.setAttribute("class", "buttonAddItem item button add");
-  sampleList.style.cssText = "position: relative;";
-  buttonAddItem.style.cssText = "position: absolute; right: 5px; bottom: 5px; color: white; background-color: darkred; font-family: monospace; font-size: 16px; font-weight: 700; width: 40%; height: 30px; margin: 0 auto; border: 2px solid purple; border-radius: 10px;";
-  buttonAddItem.textContent = "+Item";
-  sampleList.appendChild(buttonAddItem);
+  // listTitle.textContent = "listTitle";
+  // listDetail.textContent = "listDetail";
 
-  projectContainer.appendChild(sampleList);
+  // quadrantOne.setAttribute("class", "quadrantOne quadrant");
+  // quadrantTwo.setAttribute("class", "quadrantTwo quadrant");
+  // quadrantThree.setAttribute("class", "quadrantThree quadrant");
+  // quadrantFour.setAttribute("class", "quadrantFour quadrant");
+  // deleteItemButton.setAttribute("class", "item button delete");
+
+  // quadrantOne.textContent = "One";
+  // quadrantTwo.textContent = "Two";
+  // quadrantThree.textContent = "Three";
+  // quadrantFour.textContent = "Four";
+  // deleteItemButton.textContent = "X";
+
+  // sampleItem.appendChild(quadrantOne);
+  // sampleItem.appendChild(quadrantTwo);
+  // sampleItem.appendChild(quadrantThree);
+  // sampleItem.appendChild(quadrantFour);
+  // sampleItem.appendChild(deleteItemButton);
+
+  // // Add completed list to right-hand content box
+  // const projectContainer = document.createElement("div");
+  // projectContainer.setAttribute("class", "project-container project-1");
+  // contentContainer.appendChild(projectContainer);
+
+  // sampleList.appendChild(deleteListButton);
+  // sampleList.appendChild(listTitle);
+  // sampleList.appendChild(listDetail);
+  // sampleList.appendChild(sampleItem);
+
+  // buttonAddItem.setAttribute("class", "buttonAddItem item button add");
+  // sampleList.style.cssText = "position: relative;";
+  // buttonAddItem.style.cssText = "position: absolute; rfight: 5px; bottom: 5px; color: white; background-color: darkred; font-family: monospace; font-size: 16px; font-weight: 700; width: 40%; height: 30px; margin: 0 auto; border: 2px solid purple; border-radius: 10px;";
+  // buttonAddItem.textContent = "+Item";
+  // sampleList.appendChild(buttonAddItem);
+
 }
 
 export const addPanelButtons = function () {

@@ -33,13 +33,18 @@ export default function _showForm(e) {
 
     containerInstance.appendChild(formName);
     containerInstance.appendChild(formDueDate);
+
   } else if (e.target.classList.contains("list")) {
     formName.placeholder = "LIST TITLE";
     formButton.setAttribute("class", "list form submit");
 
     containerInstance.appendChild(formName);
     containerInstance.appendChild(formPriority);
+
   } else if (e.target.classList.contains("item")) {
+    const getListId = e.target.parentElement.getAttribute('id')
+    containerInstance.setAttribute('id', `${getListId}-item`)
+
     formName.placeholder = "TO-DO TASK NAME";
     formButton.setAttribute("class", "item form submit");
 
@@ -47,6 +52,7 @@ export default function _showForm(e) {
     containerInstance.appendChild(formDetails);
     containerInstance.appendChild(formDueDate);
     containerInstance.appendChild(formPriority);
+
   } else alert("ERROR");
 
   containerInstance.appendChild(formButton);

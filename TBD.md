@@ -10,6 +10,7 @@
 ## TBD This Session
 
 <!-- * move 'add item' button to Lists -->
+<!-- * fix items adding to form container i/o list -->
 * implement pseudo-storage by toggling 'hidden' projects
 * ensure items get added to the correct list
 
