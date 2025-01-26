@@ -24,15 +24,11 @@ let currentList;
 let currentItem;
 
 // --- exports below this line ---
-export default function defaultOnPageLoad() {
-  // if in global scope, causes els to be overwritten
-  // const sampleList = document.createElement("div");
-  // const sampleItem = document.createElement("div");
+export default function renderNewProject() {
 
-  // const quadrantOne = document.createElement("div");
-  // const quadrantTwo = document.createElement("div");
-  // const quadrantThree = document.createElement("div");
-  // const quadrantFour = document.createElement("div");
+  const titleContainer = document.createElement('div')
+  const projectDirectory = document.createElement('div')
+  const buttonContainer = document.createElement('div')
 
   const deleteProjectButton = document.createElement("button");
   deleteProjectButton.setAttribute("class", "project button delete");
@@ -53,81 +49,37 @@ export default function defaultOnPageLoad() {
     e.target.parentElement.remove();
   });
 
-  // Add sample project details and action buttons to Left Panel
-  panelContainer.appendChild(deleteProjectButton);
-
-  projectTitle.setAttribute("class", "inputs projectTitle");
+  // Set panel els attributes and inner content  
   projectTitle.textContent = "My To-Do List";
-  panelContainer.appendChild(projectTitle);
-
-  projectDetail.setAttribute("class", "inputs projectDetail");
   projectDetail.textContent = "Add a list!";
-  panelContainer.appendChild(projectDetail);
-
-  formContainer.setAttribute("class", "form container");
-  panelContainer.appendChild(formContainer);
-
-  addPanelButtons();
-
-  const projectContainer = document.createElement("div");
-  projectContainer.setAttribute("class", "project-container project-1");
-  contentContainer.appendChild(projectContainer);
-
-  // // Create sample list and item
-  // sampleList.setAttribute("class", "list wrapper sample");
-  // sampleItem.setAttribute("class", "item wrapper sample");
-  // listTitle.setAttribute("class", "inputs listTitle");
-  // listDetail.setAttribute("class", "inputs listDetail");
-
-  // listTitle.textContent = "listTitle";
-  // listDetail.textContent = "listDetail";
-
-  // quadrantOne.setAttribute("class", "quadrantOne quadrant");
-  // quadrantTwo.setAttribute("class", "quadrantTwo quadrant");
-  // quadrantThree.setAttribute("class", "quadrantThree quadrant");
-  // quadrantFour.setAttribute("class", "quadrantFour quadrant");
-  // deleteItemButton.setAttribute("class", "item button delete");
-
-  // quadrantOne.textContent = "One";
-  // quadrantTwo.textContent = "Two";
-  // quadrantThree.textContent = "Three";
-  // quadrantFour.textContent = "Four";
-  // deleteItemButton.textContent = "X";
-
-  // sampleItem.appendChild(quadrantOne);
-  // sampleItem.appendChild(quadrantTwo);
-  // sampleItem.appendChild(quadrantThree);
-  // sampleItem.appendChild(quadrantFour);
-  // sampleItem.appendChild(deleteItemButton);
-
-  // // Add completed list to right-hand content box
-  // const projectContainer = document.createElement("div");
-  // projectContainer.setAttribute("class", "project-container project-1");
-  // contentContainer.appendChild(projectContainer);
-
-  // sampleList.appendChild(deleteListButton);
-  // sampleList.appendChild(listTitle);
-  // sampleList.appendChild(listDetail);
-  // sampleList.appendChild(sampleItem);
-
-  // buttonAddItem.setAttribute("class", "buttonAddItem item button add");
-  // sampleList.style.cssText = "position: relative;";
-  // buttonAddItem.style.cssText = "position: absolute; rfight: 5px; bottom: 5px; color: white; background-color: darkred; font-family: monospace; font-size: 16px; font-weight: 700; width: 40%; height: 30px; margin: 0 auto; border: 2px solid purple; border-radius: 10px;";
-  // buttonAddItem.textContent = "+Item";
-  // sampleList.appendChild(buttonAddItem);
-
-}
-
-export const addPanelButtons = function () {
-  buttonAddProject.setAttribute("class", "buttonAddProject project button add");
-  buttonAddList.setAttribute("class", "buttonAddList list button add");
-
   buttonAddProject.textContent = "Add Project";
   buttonAddList.textContent = "Add List";
 
-  panelContainer.appendChild(buttonAddProject);
-  panelContainer.appendChild(buttonAddList);
-};
+  projectTitle.setAttribute("class", "inputs projectTitle");
+  projectDetail.setAttribute("class", "inputs projectDetail");
+  formContainer.setAttribute("class", "form container");
+  buttonAddProject.setAttribute("class", "buttonAddProject project button add");
+  buttonAddList.setAttribute("class", "buttonAddList list button add");
+  buttonContainer.setAttribute("class", "button-container");
+
+  // Append individual els to their sub-containers
+  titleContainer.appendChild(projectTitle);
+  titleContainer.appendChild(projectDetail);
+  buttonContainer.appendChild(buttonAddProject);
+  buttonContainer.appendChild(buttonAddList);
+
+  // Append sub-containers to main left-panel container
+  panelContainer.appendChild(deleteProjectButton);
+  panelContainer.appendChild(titleContainer);
+  panelContainer.appendChild(projectDirectory);
+  panelContainer.appendChild(formContainer);
+  panelContainer.appendChild(buttonContainer);
+
+  // Now done with left panel, move to right content box
+  const projectContainer = document.createElement("div");
+  projectContainer.setAttribute("class", "project-container project-1");
+  contentContainer.appendChild(projectContainer);
+}
 
 export {
   outerContainer,
