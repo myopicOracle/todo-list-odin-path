@@ -20,7 +20,8 @@
 https://www.youtube.com/watch?v=9zBsdzdE4sM -->
 <!-- * group els in panel, so can format spacing between -->
 <!-- * fix formatting issues of grouped elements in panel -->
-* a 'confirm' prompt before deletion
+<!-- * a 'confirm' prompt before deletion -->
 * implement pseudo-storage by toggling 'hidden' projects
+* allow user to switch between existing project via button in left panel
 * make form "pop out" and attached to proj/list
 
