@@ -63,10 +63,16 @@ export default function _showForm(e) {
   } else alert("ERROR");
 
   containerInstance.appendChild(formButton);
-
+  containerInstance.style.cssText = 'position: absolute; left: 170%; top: 400px; z-index: 15; box-sizing: border-box; background-color: lightblue; border: 2px solid blue; border-radius: 10px; width: 300px; padding: 20px 30px;'  
+  
   const submitButton = document.querySelector(".form.submit");
   submitButton.textContent = "Create";
   submitButton.addEventListener("click", _submitForm);
+
+  const popupOverlay = document.createElement("div")
+  popupOverlay.setAttribute("class", "popup-overlay hidden")
+  popupOverlay.style.cssText = "position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(180, 180, 180, 0.7);"
+  document.body.appendChild(popupOverlay)
 
   console.log("END OF _showForm()");
 }
